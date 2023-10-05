@@ -29,7 +29,7 @@ public class FightingSystem : MonoBehaviour
     }
 
     // 被攻击
-    void Attacked(double damage)
+    public void Attacked(double damage)
     {
         double realDamage = damage - defense;
         if (realDamage < 0)
@@ -40,7 +40,7 @@ public class FightingSystem : MonoBehaviour
         takeDamage(realDamage);
     }
 
-    void takeDamage(double damage)
+    public void takeDamage(double damage)
     {
         if (damage < 0)
         {
