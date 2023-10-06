@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 2138171596}
-  m_IndirectSpecularColor: {r: 0.08596048, g: 0.13642637, b: 0.32298777, a: 1}
+  m_IndirectSpecularColor: {r: 0.08596015, g: 0.13642593, b: 0.32298625, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1954,8 +1954,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hp: 100
-  attack: 20
-  defense: 10
+  maxHp: 100
+  defense: 0
+  isDead: 0
+  poweredByAI: 1
 --- !u!1 &1169098371
 GameObject:
   m_ObjectHideFlags: 0
@@ -2921,7 +2923,7 @@ PrefabInstance:
     - target: {fileID: 1449892060111206466, guid: 3908f8deb4b70424e9bda3a403e49119,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.84704757
+      value: 0.8470475
       objectReference: {fileID: 0}
     - target: {fileID: 1449892060111206466, guid: 3908f8deb4b70424e9bda3a403e49119,
         type: 3}
@@ -2931,7 +2933,7 @@ PrefabInstance:
     - target: {fileID: 1449892060111206466, guid: 3908f8deb4b70424e9bda3a403e49119,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.23209247
+      value: 0.23209246
       objectReference: {fileID: 0}
     - target: {fileID: 1449892060111206466, guid: 3908f8deb4b70424e9bda3a403e49119,
         type: 3}
@@ -3571,7 +3573,7 @@ PrefabInstance:
     - target: {fileID: 8604454021593408753, guid: 3908f8deb4b70424e9bda3a403e49119,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.9988961
+      value: 0.99889606
       objectReference: {fileID: 0}
     - target: {fileID: 8604454021593408753, guid: 3908f8deb4b70424e9bda3a403e49119,
         type: 3}
@@ -3581,7 +3583,7 @@ PrefabInstance:
     - target: {fileID: 8604454021593408753, guid: 3908f8deb4b70424e9bda3a403e49119,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.00015237424
+      value: -0.00015237422
       objectReference: {fileID: 0}
     - target: {fileID: 8604454021593408753, guid: 3908f8deb4b70424e9bda3a403e49119,
         type: 3}
@@ -4024,8 +4026,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hp: 100
-  attack: 20
-  defense: 10
+  maxHp: 100
+  defense: 0
+  isDead: 0
+  poweredByAI: 0
 --- !u!65 &1321501370
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4039,6 +4043,20 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.5, y: 1.75, z: 0.3}
   m_Center: {x: 0, y: 0.875, z: 0}
+--- !u!114 &1321501371
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1321501343}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7705cc059ec2f5240bfe606cf9bf8b60, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ActiveEffects: []
+  IsDead: 0
 --- !u!1 &1380090418
 GameObject:
   m_ObjectHideFlags: 0

@@ -16,14 +16,16 @@ namespace EmeraldAI
 
         public void SendPlayerDamage(int DamageAmount, Transform Target, EmeraldAISystem EmeraldComponent, bool CriticalHit = false)
         {
+            DamagePlayer(DamageAmount);
+
             //The standard damage function that sends damage to the Emerald AI demo player
-            DamagePlayerStandard(DamageAmount);
+            // DamagePlayerStandard(DamageAmount);
 
             //Creates damage text on the player's position, if enabled.
-            if (GetComponent<EmeraldAI.Utility.TargetPositionModifier>() != null)
-                CombatTextSystem.Instance.CreateCombatText(DamageAmount, new Vector3(transform.position.x, transform.position.y + GetComponent<EmeraldAI.Utility.TargetPositionModifier>().PositionModifier, transform.position.z), CriticalHit, false, true);
-            else
-                CombatTextSystem.Instance.CreateCombatText(DamageAmount, transform.position, CriticalHit, false, true);
+            // if (GetComponent<EmeraldAI.Utility.TargetPositionModifier>() != null)
+            //     CombatTextSystem.Instance.CreateCombatText(DamageAmount, new Vector3(transform.position.x, transform.position.y + GetComponent<EmeraldAI.Utility.TargetPositionModifier>().PositionModifier, transform.position.z), CriticalHit, false, true);
+            // else
+            //     CombatTextSystem.Instance.CreateCombatText(DamageAmount, transform.position, CriticalHit, false, true);
 
             //Sends damage to another function that will then send the damage to the RFPS player.
             //If you are using RFPS, you can uncomment this to allow Emerald Agents to damage your RFPS player.
@@ -38,6 +40,16 @@ namespace EmeraldAI
             //DamageUFPSPlayer(DamageAmount);
         }
 
+        private void DamagePlayer(int damage)
+        {
+            if (GetComponent<FightingSystem>())
+            {
+                GetComponent<FightingSystem>().Attacked(damage, null);
+                IsDead = GetComponent<FightingSystem>().isDead;
+            }
+        }
+
+        /*
         void DamagePlayerStandard(int DamageAmount)
         {
             if (GetComponent<EmeraldAIPlayerHealth>() != null)
@@ -51,6 +63,7 @@ namespace EmeraldAI
                 }
             }
         }
+        */
 
         /*
         void DamageRFPS(int DamageAmount, Transform Target)
