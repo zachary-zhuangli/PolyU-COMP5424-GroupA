@@ -14,7 +14,6 @@ namespace BNG {
 
         // Item has been grabbed by a Grabber
         public override void OnGrab(Grabber grabber) {
-
             UnhighlightItem();
         }
 
@@ -51,3 +50,4 @@ namespace BNG {
         }
     }
 }
+
