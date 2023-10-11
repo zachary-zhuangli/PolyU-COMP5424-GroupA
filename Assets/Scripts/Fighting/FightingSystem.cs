@@ -2,44 +2,50 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using EmeraldAI;
+using Fusion;
 
-public class FightingSystem : MonoBehaviour
+public class FightingSystem : NetworkBehaviour
 {
     static int DEFAULT_MAX_HP = 100;
     static int DEFAULT_DEFENSE = 0;
     // static int RAGDOLL_FORCE = 400;
 
     [SerializeField]
-    public int hp = FightingSystem.DEFAULT_MAX_HP;
+    [Networked]
+    public int hp { get; set; } = FightingSystem.DEFAULT_MAX_HP;
     [SerializeField]
-    public int maxHp = FightingSystem.DEFAULT_MAX_HP;
+    [Networked]
+    public int maxHp { get; set; } = FightingSystem.DEFAULT_MAX_HP;
     [SerializeField]
-    public int defense = FightingSystem.DEFAULT_DEFENSE;
+    [Networked]
+    public int defense { get; set; } = FightingSystem.DEFAULT_DEFENSE;
     [SerializeField]
-    public bool isDead = false;
+    [Networked]
+    public bool isDead { get; set; } = false;
 
     // 是否是AI控制（momster）；
     // 对于AI控制的对象，生命系统数据需要与AI系统同步
     [SerializeField]
     public bool poweredByAI = true;
 
-    // Start is called before the first frame update
-    void Start()
+    public override void Spawned()
     {
-        if (poweredByAI)
+        if (Object.HasStateAuthority && poweredByAI)
         {
             SyncHealthDataToAI();
         }
     }
 
-    // Update is called once per frame
-    void Update()
+    // 被攻击
+    // 已遗弃，请使用RPC_Attacked
+    public void Attacked(int damage, Transform target, int ragdollForce = 400)
     {
-
+        RPC_Attacked(damage, target.position, ragdollForce);
     }
 
-    // 被攻击
-    public void Attacked(int damage, Transform target, int ragdollForce = 400)
+    // TODO: 传攻击者对象ID，使用真实的Transform组件，代替attackerPos
+    [Rpc(RpcSources.All, RpcTargets.StateAuthority)]
+    public void RPC_Attacked(int damage, Vector3 attackerPos = new Vector3(), int ragdollForce = 400)
     {
         int damageAfterDefense = damage - defense;
         if (damageAfterDefense < 0)
@@ -50,7 +56,9 @@ public class FightingSystem : MonoBehaviour
         if (this.poweredByAI)
         {
             // 对于AI类对象，需要基于LDB的方式计算伤害量，并将生命数据在AI系统和本组件中同步
-            AIAtacked(damageAfterDefense, target, ragdollForce);
+            Transform attackerTransform = GetTempTransform("TEMP_AttackerTransform");
+            attackerTransform.position = attackerPos;
+            AIAtacked(damageAfterDefense, attackerTransform, ragdollForce);
             SyncHealthDataFromAI();
         }
         else
@@ -110,6 +118,7 @@ public class FightingSystem : MonoBehaviour
         if (EmeraldComponent)
         {
             this.setHP(EmeraldComponent.CurrentHealth);
+            this.isDead = EmeraldComponent.IsDead;
         }
     }
 
@@ -118,6 +127,21 @@ public class FightingSystem : MonoBehaviour
         if (GetComponent<EmeraldAIEventsManager>())
         {
             GetComponent<EmeraldAIEventsManager>().UpdateHealth(this.maxHp, this.hp);
+            GetComponent<EmeraldAISystem>().IsDead = this.isDead;
         }
+    }
+
+    public void InitHealthStatusForAI() {
+        SyncHealthDataToAI();
+    }
+
+    private Transform GetTempTransform(string tempGOName)
+    {
+        GameObject tempGO = GameObject.Find(tempGOName);
+        if (tempGO == null)
+        {
+            tempGO = new GameObject(tempGOName);
+        }
+        return tempGO.transform;
     }
 }
