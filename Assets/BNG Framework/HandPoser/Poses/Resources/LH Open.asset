@@ -1,0 +1,86 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d095236d72305f645a71d717903e9d8f, type: 3}
+  m_Name: LH Open
+  m_EditorClassIdentifier: 
+  PoseName: Default
+  Joints:
+    WristJoint:
+      TransformName: 
+      LocalPosition: {x: 0, y: 0, z: 0}
+      LocalRotation: {x: 0, y: 0, z: 0, w: 0}
+    ThumbJoints:
+    - TransformName: LeftHandThumb1
+      LocalPosition: {x: 0.015990209, y: 0.01009421, z: 0.004276144}
+      LocalRotation: {x: 0.14036532, y: -0.20725991, z: -0.47990227, w: 0.8408536}
+    - TransformName: LeftHandThumb2
+      LocalPosition: {x: 0.0004600817, y: 0.046641625, z: -0.000092427814}
+      LocalRotation: {x: 0.0324737, y: 0.20679343, z: 0.13972661, w: 0.96781117}
+    - TransformName: LeftHandThumb3
+      LocalPosition: {x: 0.0003104883, y: 0.03449385, z: -0.00004762764}
+      LocalRotation: {x: 0.013049511, y: 0.034701236, z: 0.07036783, w: 0.99683195}
+    - TransformName: LeftHandThumb4
+      LocalPosition: {x: -0.00006598409, y: 0.029816886, z: 0.00014206844}
+      LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+    IndexJoints:
+    - TransformName: LeftHandIndex1
+      LocalPosition: {x: 0.024667405, y: 0.07540609, z: -0.0010473444}
+      LocalRotation: {x: -0.008724248, y: 0.0010660675, z: -0.017420104, w: 0.9998096}
+    - TransformName: LeftHandIndex2
+      LocalPosition: {x: -0.00072591106, y: 0.04730798, z: -0.000448525}
+      LocalRotation: {x: 0.07841135, y: 0.00030406492, z: 0.034898117, w: 0.99631006}
+    - TransformName: LeftHandIndex3
+      LocalPosition: {x: 0.00059277477, y: 0.027042056, z: -0.00044251027}
+      LocalRotation: {x: 0.043612756, y: -0.00227796, z: -0.017302938, w: 0.9988961}
+    - TransformName: LeftHandIndex4
+      LocalPosition: {x: 0.000007742229, y: 0.023225555, z: 0.00011948211}
+      LocalRotation: {x: 0.056950267, y: -0.056404807, z: -0.0230527, w: 0.9965158}
+    MiddleJoints:
+    - TransformName: LeftHandMiddle1
+      LocalPosition: {x: -0.00017496884, y: 0.073578246, z: -0.0023390113}
+      LocalRotation: {x: 0.00872548, y: -0.00095075025, z: 0.021794276, w: 0.999724}
+    - TransformName: LeftHandMiddle2
+      LocalPosition: {x: 0.00021257688, y: 0.05847877, z: 0.0003064349}
+      LocalRotation: {x: 0.121868014, y: 0.00037949876, z: 0.0043463022, w: 0.9925368}
+    - TransformName: LeftHandMiddle3
+      LocalPosition: {x: -0.0000459537, y: 0.03242805, z: 0.00016191909}
+      LocalRotation: {x: 0.034898214, y: 0.0021109893, z: 0.00846749, w: 0.9993528}
+    - TransformName: LeftHandMiddle4
+      LocalPosition: {x: -0.000021845002, y: 0.02589012, z: -0.00009666735}
+      LocalRotation: {x: -0.034298725, y: -0.0549665, z: 0.0032308334, w: 0.99789375}
+    RingJoints:
+    - TransformName: LeftHandRing1
+      LocalPosition: {x: -0.019562902, y: 0.064204894, z: -0.006439618}
+      LocalRotation: {x: 0.043514047, y: -0.0006086698, z: 0.069753565, w: 0.9966146}
+    - TransformName: LeftHandRing2
+      LocalPosition: {x: -0.00030573717, y: 0.05728841, z: 0.00023991555}
+      LocalRotation: {x: 0.11319896, y: -0.0012898614, z: -0.008630586, w: 0.993534}
+    - TransformName: LeftHandRing3
+      LocalPosition: {x: 0.000071387665, y: 0.028662499, z: 0.0005644874}
+      LocalRotation: {x: 0.08715237, y: 0.0029846674, z: 0.008200187, w: 0.9961568}
+    - TransformName: LeftHandRing4
+      LocalPosition: {x: -0.000047549725, y: 0.024716675, z: -0.000019603758}
+      LocalRotation: {x: -0.103231974, y: -0.060006045, z: -0.003286049, w: 0.99284023}
+    PinkyJoints:
+    - TransformName: LeftHandPinky1
+      LocalPosition: {x: -0.03327722, y: 0.058696833, z: 0.0017857442}
+      LocalRotation: {x: 0.025557494, y: -0.005665746, z: 0.21636517, w: 0.9759615}
+    - TransformName: LeftHandPinky2
+      LocalPosition: {x: 0.0001505385, y: 0.04968518, z: 0.00052450615}
+      LocalRotation: {x: 0.052303907, y: -0.0018265416, z: -0.03485165, w: 0.99802125}
+    - TransformName: LeftHandPinky3
+      LocalPosition: {x: 0.00008452261, y: 0.017754626, z: -0.00014936579}
+      LocalRotation: {x: 0.078456126, y: -0.0015902687, z: -0.008580345, w: 0.9968794}
+    - TransformName: LeftHandPinky4
+      LocalPosition: {x: -0.000050867817, y: 0.018224116, z: 0.00015859357}
+      LocalRotation: {x: 0.04098232, y: -0.084191024, z: -0.07593237, w: 0.9927067}
+    OtherJoints: []
