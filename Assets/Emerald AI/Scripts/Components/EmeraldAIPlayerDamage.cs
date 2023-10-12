@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using EmeraldAI.Example;
+using Fusion;
 
 namespace EmeraldAI
 {
@@ -9,14 +10,16 @@ namespace EmeraldAI
     //or create your own. Ensure that it will be called within the SendPlayerDamage function. This allows users to customize
     //how player damage is received and applied without having to modify any main system scripts. The EmeraldComponent can
     //be used for added functionality such as only allowing blocking if the received AI is using the Melee Weapon Type.
-    public class EmeraldAIPlayerDamage : MonoBehaviour
+    public class EmeraldAIPlayerDamage : NetworkBehaviour
     {
         public List<string> ActiveEffects = new List<string>();
-        public bool IsDead = false;
+
+        [Networked]
+        public bool IsDead { get; set; } = false;
 
         public void SendPlayerDamage(int DamageAmount, Transform Target, EmeraldAISystem EmeraldComponent, bool CriticalHit = false)
         {
-            DamagePlayer(DamageAmount);
+            RPC_DamagePlayer(DamageAmount);
 
             //The standard damage function that sends damage to the Emerald AI demo player
             // DamagePlayerStandard(DamageAmount);
@@ -40,11 +43,12 @@ namespace EmeraldAI
             //DamageUFPSPlayer(DamageAmount);
         }
 
-        private void DamagePlayer(int damage)
+        [Rpc(RpcSources.All, RpcTargets.StateAuthority)]
+        private void RPC_DamagePlayer(int damage)
         {
             if (GetComponent<FightingSystem>())
             {
-                GetComponent<FightingSystem>().Attacked(damage, null);
+                GetComponent<FightingSystem>().RPC_Attacked(damage);
                 IsDead = GetComponent<FightingSystem>().isDead;
             }
         }
