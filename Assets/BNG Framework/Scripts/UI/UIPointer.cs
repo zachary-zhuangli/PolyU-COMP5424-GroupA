@@ -87,44 +87,39 @@ namespace BNG {
         XRRayInteractor xrRay;
         XRInteractorLineVisual vis;
 
-public virtual void SetupXRITRaycaster() {
-    // Check if user has already added any components
-    xrRay = gameObject.GetComponent<XRRayInteractor>();
-    vis = gameObject.GetComponent<XRInteractorLineVisual>();
-    Gradient curColor = null;
+        public virtual void SetupXRITRaycaster() {
+            xrRay = gameObject.GetComponent<XRRayInteractor>();
+            if(xrRay == null) {
 
-    if(xrRay == null) {
+                ActionBasedController abc = gameObject.AddComponent<ActionBasedController>();
 
-        xrRay = gameObject.AddComponent<XRRayInteractor>();
-        ActionBasedController abc = gameObject.AddComponent<ActionBasedController>();
 
-        // Setup default ui input action
-        if (VRUISystem.Instance.UIInputAction != null) {
-            abc.uiPressAction = new UnityEngine.InputSystem.InputActionProperty(VRUISystem.Instance.UIInputAction);
+                xrRay = gameObject.AddComponent<XRRayInteractor>();
+               
 
-            // For testing
-            abc.selectAction = new UnityEngine.InputSystem.InputActionProperty(VRUISystem.Instance.UIInputAction);
+                if (VRUISystem.Instance.UIInputAction != null) {
+                    abc.uiPressAction = new UnityEngine.InputSystem.InputActionProperty(VRUISystem.Instance.UIInputAction);
+
+                    // For testing
+                    abc.selectAction = new UnityEngine.InputSystem.InputActionProperty(VRUISystem.Instance.UIInputAction);
+                }
+
+                Gradient curColor = null;
+                LineRenderer lr = GetComponent<LineRenderer>();
+                if(lr) {
+                    lr.useWorldSpace = true;
+                    curColor = lr.colorGradient;
+                }
+
+                // Setup XRay Visual
+                vis = gameObject.AddComponent<XRInteractorLineVisual>();
+                if(curColor != null) {
+                    vis.validColorGradient = curColor;
+                    vis.invalidColorGradient = curColor;
+                    vis.lineWidth = 0.01f;
+                }
+            }
         }
-                
-        LineRenderer lr = GetComponent<LineRenderer>();
-        if(lr) {
-            lr.useWorldSpace = true;
-            curColor = lr.colorGradient;
-        }
-    }
-
-    if(vis == null) {
-        // Setup XRay Visual
-        vis = gameObject.AddComponent<XRInteractorLineVisual>();
-        vis.lineWidth = 0.01f;
-
-        // Setup the color
-        if(curColor != null) {
-            vis.validColorGradient = curColor;
-            vis.invalidColorGradient = curColor;
-        }
-    }
-}
 #endif
 
         void OnEnable() {

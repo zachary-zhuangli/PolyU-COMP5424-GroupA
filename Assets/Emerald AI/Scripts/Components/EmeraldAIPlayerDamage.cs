@@ -44,7 +44,7 @@ namespace EmeraldAI
         {
             if (GetComponent<FightingSystem>())
             {
-                GetComponent<FightingSystem>().Attacked(damage, null);
+                GetComponent<FightingSystem>().RPC_Attacked(damage);
                 IsDead = GetComponent<FightingSystem>().isDead;
             }
         }

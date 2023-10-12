@@ -9,7 +9,6 @@ namespace BNG {
     /// </summary>
     public class HandController : MonoBehaviour {
 
-        [Header("Setup : ")]
         [Tooltip("HandController parent will be set to this on Start if specified")]
         public Transform HandAnchor;
 
@@ -42,29 +41,22 @@ namespace BNG {
         [Tooltip("Check the state of this grabber to determine animation state. If null, a child Grabber component will be used.")]
         public Grabber grabber;
 
-        [Header("Override : ")]
-        [Tooltip("If specified this HandPose will be set. Grabbables and Idle Poses will be ignored.")]
-        public HandPose HandPoseOverride;
-
         [Header("Shown for Debug : ")]
         /// <summary>
         /// 0 = Open Hand, 1 = Full Grip
         /// </summary>
-        [Range(0f, 1f)]
         public float GripAmount;
         private float _prevGrip;
 
         /// <summary>
         /// 0 = Index Curled in,  1 = Pointing Finger
         /// </summary>
-        [Range(0f, 1f)]
         public float PointAmount;
         private float _prevPoint;
 
         /// <summary>
         /// 0 = Thumb Down, 1 = Thumbs Up
         /// </summary>
-        [Range(0f, 1f)]
         public float ThumbAmount;
         private float _prevThumb;
         
@@ -139,15 +131,10 @@ namespace BNG {
             // Set Hand state according to InputBridge
             UpdateFromInputs();
             
-            // If a handpose override is specified, we can skip checking grabbables and idle state and go straight to updating hand pose
-            if(HandPoseOverride != null) {
-                UpdateHandPoser();
-            }
             // Holding something - update the appropriate component
-            else if (HoldingObject()) {
+            if(HoldingObject()) {
                 UpdateHeldObjectState();
             }
-            // Lastly switch to idle state
             else {
                 UpdateIdleState();
             }
@@ -213,12 +200,8 @@ namespace BNG {
             if(HoldingObject()) {
 
                 // Switch components based on held object properties
-                // Hand Pose Overrides all states
-                if(HandPoseOverride != null) {
-                    // Do nothing
-                }
                 // Animator
-                else if (grabber.HeldGrabbable.handPoseType == HandPoseType.AnimatorID) {
+                if (grabber.HeldGrabbable.handPoseType == HandPoseType.AnimatorID) {
                     EnableHandAnimator();
                 }
                 // Auto Poser - Once
@@ -411,7 +394,6 @@ namespace BNG {
 
         public virtual void UpdateHandPoser() {
 
-            // Bail early if user set flag not to update
             if (DoUpdateHandPoser == false) {
                 return;
             }
@@ -422,7 +404,7 @@ namespace BNG {
             }                        
 
             // Bail early if missing any info
-            if(HandPoseOverride == null && (grabber == null || handPoser == null || grabber.HeldGrabbable == null || grabber.HeldGrabbable.handPoseType != HandPoseType.HandPose)) {
+            if(handPoser == null || grabber == null || grabber.HeldGrabbable == null || grabber.HeldGrabbable.handPoseType != HandPoseType.HandPose) {
                 return;
             }
 
@@ -431,15 +413,8 @@ namespace BNG {
                 poseBlender.UpdatePose = false;
             }
 
-            // Use HandPoseOverride if specified
-            if(HandPoseOverride) {
-                UpdateCurrentHandPose();
-                if (handPoser.CurrentPose != HandPoseOverride) {
-                    
-                }
-            }
             // Update hand pose if changed
-            else if (handPoser.CurrentPose == null || handPoser.CurrentPose != grabber.HeldGrabbable.SelectedHandPose) {
+            if (handPoser.CurrentPose == null || handPoser.CurrentPose != grabber.HeldGrabbable.SelectedHandPose) {
                 UpdateCurrentHandPose();
             }
         }
@@ -450,7 +425,7 @@ namespace BNG {
 
         public virtual void UpdateHandPoserIdleState() {
 
-            // Make sure animator isn't firing while we do our idle state
+            // Makde sure animator isn't firing while we do our idle state
             DisableHandAnimator();
 
             // Check if we need to set up the pose blender
@@ -522,7 +497,7 @@ namespace BNG {
 
             // If no pose blender is found, add it and set it up so we can use it in Update()
             if (poseBlender == null || !poseBlender.isActiveAndEnabled) {
-                poseBlender = handPoser.GetComponentInChildren<HandPoseBlender>();
+                poseBlender = GetComponentInChildren<HandPoseBlender>();
             }
 
             // If no pose blender is found, add it and set it up so we can use it in Update()
@@ -640,15 +615,7 @@ namespace BNG {
         public virtual void UpdateCurrentHandPose() {
             if(handPoser != null) {
                 // Update the pose
-                // Use HandPose Override if available
-                if(HandPoseOverride != null) {
-                    handPoser.CurrentPose = HandPoseOverride;
-                }
-                // Check what HandPose is specified on the currently held grabbable
-                else if(grabber != null && grabber.HeldGrabbable != null) {
-                    handPoser.CurrentPose = grabber.HeldGrabbable.SelectedHandPose;
-                }
-                
+                handPoser.CurrentPose = grabber.HeldGrabbable.SelectedHandPose;
                 handPoser.OnPoseChanged();
             }
         }
