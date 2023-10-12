@@ -509,7 +509,7 @@ namespace BNG {
 
             // Set Original Scale based in World coordinates if available
             if (transform.parent != null) {
-                OriginalScale = transform.lossyScale; // OriginalScale = transform.parent.TransformVector(transform.localScale);
+                OriginalScale = transform.parent.TransformVector(transform.localScale);
             }
             else {
                 OriginalScale = transform.localScale;

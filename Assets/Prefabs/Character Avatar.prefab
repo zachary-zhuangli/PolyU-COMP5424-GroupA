@@ -3306,9 +3306,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7705cc059ec2f5240bfe606cf9bf8b60, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _interpolationDataSource: 0
   ActiveEffects: []
-  _IsDead: 0
+  IsDead: 0
 --- !u!114 &7497893426506363827
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3332,7 +3331,6 @@ MonoBehaviour:
   NestedObjects: []
   NetworkedBehaviours:
   - {fileID: 7497893426506363830}
-  - {fileID: 7497893426506363829}
   - {fileID: 7497893426506363826}
   - {fileID: 3994076265928102473}
   SimulationBehaviours: []
@@ -4015,7 +4013,6 @@ MonoBehaviour:
   UseIndexFingerTracking: 1
   HandAnimationSpeed: 20
   grabber: {fileID: 0}
-  HandPoseOverride: {fileID: 0}
   GripAmount: 0
   PointAmount: 0
   ThumbAmount: 0
@@ -4471,7 +4468,6 @@ MonoBehaviour:
   UseIndexFingerTracking: 1
   HandAnimationSpeed: 20
   grabber: {fileID: 0}
-  HandPoseOverride: {fileID: 0}
   GripAmount: 0
   PointAmount: 0
   ThumbAmount: 0

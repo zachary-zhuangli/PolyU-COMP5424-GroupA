@@ -26,6 +26,17 @@ public class PlayerSpawner : NetworkBehaviour
 
         Debug.Log("Player and XRTarget spawn: " + Runner.LocalPlayer);
         Runner.Spawn(XRPosPrefab, new Vector3(0, 0, 0), Quaternion.identity, Runner.LocalPlayer);
-        Runner.Spawn(PlayerPrefab, new Vector3(-132, 66, -36), Quaternion.identity, Runner.LocalPlayer);
+        var localPlayerGO = Runner.Spawn(PlayerPrefab, new Vector3(-132, 66, -36), Quaternion.identity, Runner.LocalPlayer);
+        HideLocalPlayer(localPlayerGO);
+    }
+
+    private void HideLocalPlayer(NetworkObject playerGO)
+    {
+        playerGO.transform.gameObject.layer = LayerMask.NameToLayer("Hide");
+
+        foreach (Transform tran in playerGO.GetComponentsInChildren<Transform>())
+        {
+            tran.gameObject.layer = LayerMask.NameToLayer("Hide");
+        }
     }
 }

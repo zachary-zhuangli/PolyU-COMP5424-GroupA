@@ -1804,9 +1804,9 @@ MonoBehaviour:
   CurrentDamageAmount: 5
   DamageAmountRun: 5
   WanderRadius: 25
-  TabNumber: 6
+  TabNumber: 2
   TemperamentTabNumber: 0
-  DetectionTagsTabNumber: 0
+  DetectionTagsTabNumber: 1
   AnimationTabNumber: 0
   SoundTabNumber: 0
   MovementTabNumber: 1
@@ -2131,7 +2131,7 @@ MonoBehaviour:
   NonCombatAILayerIndex: 2
   DetectionLayerMask:
     serializedVersion: 2
-    m_Bits: 1
+    m_Bits: 2147483649
   ObstructionDetectionLayerMask:
     serializedVersion: 2
     m_Bits: 4

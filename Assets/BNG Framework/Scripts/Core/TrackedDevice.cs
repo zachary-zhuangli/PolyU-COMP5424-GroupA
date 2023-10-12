@@ -35,26 +35,13 @@ namespace BNG {
         }
 
         protected virtual void Update() {
-            
-#if UNITY_WEBGL
-            if(Application.isEditor) {
-                RefreshDeviceStatus();
-                UpdateDevice();
-            }
-#else
             RefreshDeviceStatus();
+
             UpdateDevice();
-#endif
         }
 
         protected virtual void FixedUpdate() {
-#if UNITY_WEBGL
-            if (Application.isEditor) {
-                UpdateDevice();
-            }
-#else
             UpdateDevice();
-#endif
         }
 
         public virtual void RefreshDeviceStatus() {
@@ -72,10 +59,11 @@ namespace BNG {
             }
         }
 
-    public virtual void UpdateDevice() {
+        public virtual void UpdateDevice() {
 
-        // Check and assign our device status
-        if (deviceToTrack.isValid) {
+            // Check and assign our device status
+            if (deviceToTrack.isValid) {
+
                 if (Device == TrackableDevice.HMD) {
                     transform.localPosition = currentLocalPosition = InputBridge.Instance.GetHMDLocalPosition();
                     transform.localRotation = currentLocalRotation = InputBridge.Instance.GetHMDLocalRotation();
@@ -89,16 +77,10 @@ namespace BNG {
                     transform.localRotation = currentLocalRotation = InputBridge.Instance.GetControllerLocalRotation(ControllerHand.Right);
                 }
             }
-    }
+        }
 
         protected virtual void OnBeforeRender() {
-#if UNITY_WEBGL
-            if (Application.isEditor) {
-                UpdateDevice();
-            }
-#else
             UpdateDevice();
-#endif
         }
     }
 

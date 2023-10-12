@@ -40,7 +40,7 @@ public class FightingSystem : NetworkBehaviour
     // 已遗弃，请使用RPC_Attacked
     public void Attacked(int damage, Transform target, int ragdollForce = 400)
     {
-        RPC_Attacked(damage, target.position, ragdollForce);
+        this.RPC_Attacked(damage, target.position, ragdollForce);
     }
 
     // TODO: 传攻击者对象ID，使用真实的Transform组件，代替attackerPos
