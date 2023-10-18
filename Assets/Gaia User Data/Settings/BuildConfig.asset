@@ -13,8 +13,5 @@ MonoBehaviour:
   m_Name: BuildConfig
   m_EditorClassIdentifier: 
   m_publicationType: 1
-  m_sceneBuildEntries:
-  - m_masterScene: {fileID: 102900000, guid: 2f2215073ec33c84e8ca35ac80262e06, type: 3}
-    m_serverScene: {fileID: 0}
-    m_impostorState: 1
+  m_sceneBuildEntries: []
   m_buildHistory: []

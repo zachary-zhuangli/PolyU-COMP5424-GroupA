@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3084778881610756377}
   - component: {fileID: 9087169805586272578}
   - component: {fileID: 5861990790950431285}
-  m_Layer: 9
+  m_Layer: 12
   m_Name: PW_Plants_Berry_Bushes_04_LOD2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -25,13 +25,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 213182642894324049}
-  serializedVersion: 2
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 688271428585073298}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &9087169805586272578
 MeshFilter:
@@ -95,7 +95,7 @@ GameObject:
   - component: {fileID: 8869301299147982925}
   - component: {fileID: 6101903457962912482}
   - component: {fileID: 6209735207364230426}
-  m_Layer: 9
+  m_Layer: 12
   m_Name: PW_Plants_Berry_Bushes_04_LOD1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -109,13 +109,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4329481194283283774}
-  serializedVersion: 2
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 688271428585073298}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &6101903457962912482
 MeshFilter:
@@ -178,7 +178,7 @@ GameObject:
   m_Component:
   - component: {fileID: 688271428585073298}
   - component: {fileID: 143734352618404950}
-  m_Layer: 9
+  m_Layer: 12
   m_Name: PW_Plants_Berry_Bushes_04
   m_TagString: PW - Nature
   m_Icon: {fileID: 0}
@@ -192,7 +192,6 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4599972849490057345}
-  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -108.239136, y: 0.105509534, z: -5.6507344}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -203,6 +202,7 @@ Transform:
   - {fileID: 3084778881610756377}
   - {fileID: 60962223826199428}
   m_Father: {fileID: 0}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!205 &143734352618404950
 LODGroup:
@@ -246,7 +246,7 @@ GameObject:
   - component: {fileID: 1786081961172918970}
   - component: {fileID: 6605968775465084360}
   - component: {fileID: 1834844793942438688}
-  m_Layer: 9
+  m_Layer: 12
   m_Name: PW_Plants_Berry_Bushes_04_LOD0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -260,13 +260,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8960505466800787486}
-  serializedVersion: 2
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 688271428585073298}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &6605968775465084360
 MeshFilter:
@@ -324,7 +324,6 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    serializedVersion: 3
     m_TransformParent: {fileID: 688271428585073298}
     m_Modifications:
     - target: {fileID: 4981566910721909027, guid: 69822e8869492a94ea61776fbf81596d,
@@ -390,7 +389,7 @@ PrefabInstance:
     - target: {fileID: 7735918650603304873, guid: 69822e8869492a94ea61776fbf81596d,
         type: 3}
       propertyPath: m_Layer
-      value: 9
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 7735918650603304873, guid: 69822e8869492a94ea61776fbf81596d,
         type: 3}
@@ -398,9 +397,6 @@ PrefabInstance:
       value: 82
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 69822e8869492a94ea61776fbf81596d, type: 3}
 --- !u!4 &60962223826199428 stripped
 Transform:

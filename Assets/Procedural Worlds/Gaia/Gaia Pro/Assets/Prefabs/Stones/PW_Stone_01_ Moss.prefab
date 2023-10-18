@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 933329414257725944}
   - component: {fileID: 6214269526273404713}
   - component: {fileID: 1655678410994614512}
-  m_Layer: 10
+  m_Layer: 13
   m_Name: PW_Stone_01_01_LOD0
   m_TagString: PW - Nature
   m_Icon: {fileID: 0}
@@ -25,13 +25,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 494192221080554287}
-  serializedVersion: 2
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2185892743267259456}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &6214269526273404713
 MeshFilter:
@@ -94,7 +94,7 @@ GameObject:
   - component: {fileID: 2185892743267259456}
   - component: {fileID: 1596041493377090180}
   - component: {fileID: 803015916880304581}
-  m_Layer: 10
+  m_Layer: 13
   m_Name: PW_Stone_01_ Moss
   m_TagString: PW - Nature
   m_Icon: {fileID: 0}
@@ -108,7 +108,6 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2886385177403745875}
-  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -119,6 +118,7 @@ Transform:
   - {fileID: 536648762874772109}
   - {fileID: 3462439679586326415}
   m_Father: {fileID: 0}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!205 &1596041493377090180
 LODGroup:
@@ -159,17 +159,9 @@ MeshCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2886385177403745875}
   m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
   m_IsTrigger: 0
-  m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 5
+  serializedVersion: 4
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 1662968920003909772, guid: 874cf0d250d948647b7462635030ce90, type: 3}
@@ -184,7 +176,7 @@ GameObject:
   - component: {fileID: 3462439679586326415}
   - component: {fileID: 3886656260990133800}
   - component: {fileID: 5231679977706803541}
-  m_Layer: 10
+  m_Layer: 13
   m_Name: PW_Stone_01_01_LOD3
   m_TagString: PW - Nature
   m_Icon: {fileID: 0}
@@ -198,13 +190,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4524189885515850424}
-  serializedVersion: 2
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2185892743267259456}
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &3886656260990133800
 MeshFilter:
@@ -267,7 +259,7 @@ GameObject:
   - component: {fileID: 3917092530405585158}
   - component: {fileID: 3761437433286442333}
   - component: {fileID: 754880280135643254}
-  m_Layer: 10
+  m_Layer: 13
   m_Name: PW_Stone_01_01_LOD1
   m_TagString: PW - Nature
   m_Icon: {fileID: 0}
@@ -281,13 +273,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4673217469475181339}
-  serializedVersion: 2
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2185892743267259456}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &3761437433286442333
 MeshFilter:
@@ -350,7 +342,7 @@ GameObject:
   - component: {fileID: 536648762874772109}
   - component: {fileID: 4715351968583444789}
   - component: {fileID: 1766956633871393197}
-  m_Layer: 10
+  m_Layer: 13
   m_Name: PW_Stone_01_01_LOD2
   m_TagString: PW - Nature
   m_Icon: {fileID: 0}
@@ -364,13 +356,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7760681080275021950}
-  serializedVersion: 2
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2185892743267259456}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &4715351968583444789
 MeshFilter:
