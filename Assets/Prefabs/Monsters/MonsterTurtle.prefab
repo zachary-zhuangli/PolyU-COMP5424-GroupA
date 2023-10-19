@@ -1175,7 +1175,7 @@ Transform:
   m_GameObject: {fileID: 3815771710009965540}
   m_LocalRotation: {x: -0, y: -0.97371966, z: -0, w: 0.22775014}
   m_LocalPosition: {x: -77.44, y: 120.71, z: -26.305}
-  m_LocalScale: {x: 0.2, y: 0.2, z: 0.2}
+  m_LocalScale: {x: 0.18, y: 0.18, z: 0.18}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 8354135833990578634}
@@ -1997,7 +1997,7 @@ MonoBehaviour:
   UseCustomFontAIName: 0
   UseCustomFontAILevel: 0
   AlignAIWithGroundRef: 0
-  CreateHealthBarsRef: 0
+  CreateHealthBarsRef: 1
   UseNonAITagRef: 1
   UseMagicEffectsPackRef: 0
   RandomizeDamageRef: 1
@@ -2124,7 +2124,7 @@ MonoBehaviour:
     m_Bits: 4
   UILayerMask:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 2147516215
   AlignmentLayerMask:
     serializedVersion: 2
     m_Bits: 1
