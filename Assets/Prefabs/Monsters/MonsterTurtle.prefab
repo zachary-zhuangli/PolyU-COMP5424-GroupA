@@ -1158,6 +1158,7 @@ GameObject:
   - component: {fileID: 4050198376570236607}
   - component: {fileID: 4050198376570236604}
   - component: {fileID: 4050198376570236605}
+  - component: {fileID: 8875598347329236080}
   m_Layer: 0
   m_Name: MonsterTurtle
   m_TagString: Respawn
@@ -2265,6 +2266,7 @@ MonoBehaviour:
   - {fileID: 4050198376570236607}
   - {fileID: 4050198376570236604}
   - {fileID: 4050198376570236605}
+  - {fileID: 8875598347329236080}
   SimulationBehaviours: []
 --- !u!114 &4050198376570236607
 MonoBehaviour:
@@ -2337,6 +2339,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _interpolationDataSource: 0
+--- !u!114 &8875598347329236080
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3815771710009965540}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a03e362b017e432086440b65b77a75d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _interpolationDataSource: 0
+  _hp: 10
+  _maxHp: 10
+  _defense: 0
+  _isDead: 0
+  poweredByAI: 1
 --- !u!1 &3916828819114553280
 GameObject:
   m_ObjectHideFlags: 0

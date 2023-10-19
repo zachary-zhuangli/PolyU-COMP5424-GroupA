@@ -2579,6 +2579,7 @@ GameObject:
   - component: {fileID: 8176030802109784139}
   - component: {fileID: 8176030802109784138}
   - component: {fileID: 8176030802109784136}
+  - component: {fileID: 2849079355741834507}
   m_Layer: 0
   m_Name: MonsterHorse
   m_TagString: Respawn
@@ -2833,6 +2834,7 @@ MonoBehaviour:
   - {fileID: 8176030802109784131}
   - {fileID: 8176030802109784130}
   - {fileID: 8176030802109784129}
+  - {fileID: 2849079355741834507}
   SimulationBehaviours: []
 --- !u!114 &8176030802109784143
 MonoBehaviour:
@@ -3762,6 +3764,24 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!114 &2849079355741834507
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9058552373720259277}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a03e362b017e432086440b65b77a75d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _interpolationDataSource: 0
+  _hp: 20
+  _maxHp: 20
+  _defense: 0
+  _isDead: 0
+  poweredByAI: 1
 --- !u!1 &9111371585775729046
 GameObject:
   m_ObjectHideFlags: 0
