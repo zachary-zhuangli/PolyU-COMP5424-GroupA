@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using EmeraldAI;
 using Fusion;
+using UnityEngine.Events;
 
 public class FightingSystem : NetworkBehaviour
 {
@@ -28,7 +29,10 @@ public class FightingSystem : NetworkBehaviour
     [SerializeField]
     public bool poweredByAI = true;
 
-    public override void Spawned()
+	// 创建一个Unity事件
+	public UnityEvent OnDeathEvent;
+
+	public override void Spawned()
     {
         if (Object.HasStateAuthority && poweredByAI)
         {
@@ -91,7 +95,9 @@ public class FightingSystem : NetworkBehaviour
         {
             isDead = true;
             hp = 0;
-        }
+			// 触发死亡事件
+			OnDeathEvent?.Invoke();
+		}
     }
 
     // 提供给外部系统同步HP数据
