@@ -122,25 +122,35 @@ namespace BNG {
 
             holdingArrow = GrabbedArrow != null;
 
-            // Grab an arrow by holding trigger in grab area
-            if (canGrabArrowFromKnock()) {
+			// Grab an arrow by holding trigger in grab area
+			if (canGrabArrowFromKnock())
+			{
 
-                GameObject arrow = Instantiate(Resources.Load(ArrowPrefabName, typeof(GameObject))) as GameObject;
-                arrow.transform.position = ArrowKnock.transform.position;
-                arrow.transform.LookAt(getArrowRest());
+				GameObject arrow = Instantiate(Resources.Load(ArrowPrefabName, typeof(GameObject))) as GameObject;
+				arrow.transform.position = ArrowKnock.transform.position;
+				arrow.transform.LookAt(getArrowRest());
 
-                // Use trigger when grabbing from knock
-                Grabbable g = arrow.GetComponent<Grabbable>();
-                g.GrabButton = GrabButton.Trigger;
-                
-                // We will apply our own velocity on drop
-                g.AddControllerVelocityOnDrop = false;
+				// 添加 WeaponBaseAttack 脚本
+				WeaponBaseAttack attackComponent = arrow.AddComponent<WeaponBaseAttack>();
+				if (attackComponent != null)
+				{
+					attackComponent.Damage = 25; // 设置您想要的伤害值
+					attackComponent.MinImpulse = 0.1f; // 设置您想要的最小冲量值
+													   // ...根据需要设置其他属性
+				}
 
-                GrabArrow(arrow.GetComponent<Arrow>());
-            }
+				// Use trigger when grabbing from knock
+				Grabbable g = arrow.GetComponent<Grabbable>();
+				g.GrabButton = GrabButton.Trigger;
 
-            // No arrow, lerp knock back to start
-            if (GrabbedArrow == null) {
+				// We will apply our own velocity on drop
+				g.AddControllerVelocityOnDrop = false;
+
+				GrabArrow(arrow.GetComponent<Arrow>());
+			}
+
+			// No arrow, lerp knock back to start
+			if (GrabbedArrow == null) {
                 resetStringPosition();                
             }
 
