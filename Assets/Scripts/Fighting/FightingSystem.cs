@@ -29,9 +29,6 @@ public class FightingSystem : NetworkBehaviour
     [SerializeField]
     public bool poweredByAI = true;
 
-	// 创建一个Unity事件
-	public UnityEvent OnDeathEvent;
-
 	public override void Spawned()
     {
         if (Object.HasStateAuthority && poweredByAI)
@@ -95,8 +92,6 @@ public class FightingSystem : NetworkBehaviour
         {
             isDead = true;
             hp = 0;
-			// 触发死亡事件
-			OnDeathEvent?.Invoke();
 		}
     }
 

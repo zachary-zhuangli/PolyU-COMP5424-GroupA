@@ -2,8 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-using UnityEngine;
-
 public class MusicController : MonoBehaviour
 {
 	public AudioSource combatMusic; // 指向AudioSource组件的引用，该组件播放战斗音乐

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using EmeraldAI;
 
+// TODO: 联机时非host客户端音乐同步
 public class MonsterDeathSound : MonoBehaviour
 {
 	public AudioClip deathSound; // 怪物的死亡声音剪辑

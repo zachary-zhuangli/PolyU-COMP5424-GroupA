@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SwordAttack : MonoBehaviour
+public class SwordAttackAudio : MonoBehaviour
 {
 	public AudioSource attackAudioSource; // 拖动你的AudioSource组件到这里
 	public AudioClip shieldClip;          // 剑与盾碰撞的声音
