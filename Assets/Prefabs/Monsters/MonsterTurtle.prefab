@@ -1159,6 +1159,7 @@ GameObject:
   - component: {fileID: 4050198376570236604}
   - component: {fileID: 4050198376570236605}
   - component: {fileID: 8875598347329236080}
+  - component: {fileID: -78435621377078199}
   m_Layer: 0
   m_Name: MonsterTurtle
   m_TagString: Respawn
@@ -1203,7 +1204,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!65 &4050198376570236602
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1227,8 +1227,8 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_audioClip: {fileID: 8300000, guid: 01dc8b9985634654b84aa93bd1413eaf, type: 3}
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -2357,6 +2357,22 @@ MonoBehaviour:
   _defense: 0
   _isDead: 0
   poweredByAI: 1
+  OnDeathEvent:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &-78435621377078199
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3815771710009965540}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb00652c19022ff4d8da027b4115d0fc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  deathSound: {fileID: 8300000, guid: 01dc8b9985634654b84aa93bd1413eaf, type: 3}
 --- !u!1 &3916828819114553280
 GameObject:
   m_ObjectHideFlags: 0

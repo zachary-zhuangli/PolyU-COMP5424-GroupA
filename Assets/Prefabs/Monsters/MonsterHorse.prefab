@@ -2580,6 +2580,7 @@ GameObject:
   - component: {fileID: 8176030802109784138}
   - component: {fileID: 8176030802109784136}
   - component: {fileID: 2849079355741834507}
+  - component: {fileID: 9138427664310418737}
   m_Layer: 0
   m_Name: MonsterHorse
   m_TagString: Respawn
@@ -2628,7 +2629,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!65 &8176030802109784151
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2652,8 +2652,8 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_audioClip: {fileID: 8300000, guid: 01dc8b9985634654b84aa93bd1413eaf, type: 3}
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -3782,6 +3782,22 @@ MonoBehaviour:
   _defense: 0
   _isDead: 0
   poweredByAI: 1
+  OnDeathEvent:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &9138427664310418737
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9058552373720259277}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb00652c19022ff4d8da027b4115d0fc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  deathSound: {fileID: 8300000, guid: 01dc8b9985634654b84aa93bd1413eaf, type: 3}
 --- !u!1 &9111371585775729046
 GameObject:
   m_ObjectHideFlags: 0

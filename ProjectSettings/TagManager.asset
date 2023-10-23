@@ -11,6 +11,8 @@ TagManager:
   - Synty Medium Farm
   - Synty Small Farm
   - Flora Tree Collision
+  - Shield
+  - Sword
   layers:
   - Default
   - TransparentFX
