@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8862548895697974558}
   - component: {fileID: 5794680540759313811}
   - component: {fileID: 6230100899410071050}
-  m_Layer: 11
+  m_Layer: 14
   m_Name: PW_Tree_Spruce_01_04_LOD2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -25,13 +25,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 491942180180748614}
-  serializedVersion: 2
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6430539672386160987}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &5794680540759313811
 MeshFilter:
@@ -95,7 +95,7 @@ GameObject:
   - component: {fileID: 6085884085032511968}
   - component: {fileID: 5958318535555983031}
   - component: {fileID: 4112345538500005904}
-  m_Layer: 11
+  m_Layer: 14
   m_Name: PW_Tree_Spruce_01_04_LOD0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -109,13 +109,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2045132843461726348}
-  serializedVersion: 2
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6430539672386160987}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &5958318535555983031
 MeshFilter:
@@ -180,7 +180,7 @@ GameObject:
   - component: {fileID: 4698253684693295823}
   - component: {fileID: 3494455201646496205}
   - component: {fileID: 552913758455982984}
-  m_Layer: 11
+  m_Layer: 14
   m_Name: PW_Tree_Spruce_01_04_LOD1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -194,13 +194,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4472805916120490559}
-  serializedVersion: 2
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6430539672386160987}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &3494455201646496205
 MeshFilter:
@@ -264,7 +264,7 @@ GameObject:
   - component: {fileID: 6430539672386160987}
   - component: {fileID: 5858694195906633631}
   - component: {fileID: 8553630168601714480}
-  m_Layer: 11
+  m_Layer: 14
   m_Name: PW_Tree_Spruce_04
   m_TagString: PW - Nature
   m_Icon: {fileID: 0}
@@ -278,7 +278,6 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8027248633461390152}
-  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -289,6 +288,7 @@ Transform:
   - {fileID: 8862548895697974558}
   - {fileID: 5740003005109586433}
   m_Father: {fileID: 0}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!205 &5858694195906633631
 LODGroup:
@@ -329,17 +329,8 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8027248633461390152}
   m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
   m_IsTrigger: 0
-  m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 2
   m_Radius: 0.5
   m_Height: 15
   m_Direction: 1
@@ -349,7 +340,6 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    serializedVersion: 3
     m_TransformParent: {fileID: 6430539672386160987}
     m_Modifications:
     - target: {fileID: 4936487779295605864, guid: df9c0aca988eae2438ca35d9b5653898,
@@ -415,7 +405,7 @@ PrefabInstance:
     - target: {fileID: 6437777616330355842, guid: df9c0aca988eae2438ca35d9b5653898,
         type: 3}
       propertyPath: m_Layer
-      value: 11
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 6437777616330355842, guid: df9c0aca988eae2438ca35d9b5653898,
         type: 3}
@@ -423,9 +413,6 @@ PrefabInstance:
       value: 82
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: df9c0aca988eae2438ca35d9b5653898, type: 3}
 --- !u!23 &1489676048073383253 stripped
 MeshRenderer:

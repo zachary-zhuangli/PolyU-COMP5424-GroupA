@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1441795949366252704}
   - component: {fileID: 8501696420995711886}
   - component: {fileID: 5302797430289770005}
-  m_Layer: 9
+  m_Layer: 12
   m_Name: PW_Plant_Mushroom_01_08_LOD2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -25,13 +25,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1025316608080844541}
-  serializedVersion: 2
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 32972213030964104}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &8501696420995711886
 MeshFilter:
@@ -94,7 +94,7 @@ GameObject:
   - component: {fileID: 7170576052130297436}
   - component: {fileID: 990308227878685219}
   - component: {fileID: 5218322205577327967}
-  m_Layer: 9
+  m_Layer: 12
   m_Name: PW_Plant_Mushroom_01_08_LOD0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -108,13 +108,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2699012288096760192}
-  serializedVersion: 2
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 32972213030964104}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &990308227878685219
 MeshFilter:
@@ -176,7 +176,7 @@ GameObject:
   m_Component:
   - component: {fileID: 32972213030964104}
   - component: {fileID: 578354781226097996}
-  m_Layer: 9
+  m_Layer: 12
   m_Name: PW_Plant_Mushroom_08
   m_TagString: PW - Nature
   m_Icon: {fileID: 0}
@@ -190,7 +190,6 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3904196282817558939}
-  serializedVersion: 2
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -200,6 +199,7 @@ Transform:
   - {fileID: 1441795949366252704}
   - {fileID: 6208887506993417628}
   m_Father: {fileID: 0}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!205 &578354781226097996
 LODGroup:
@@ -239,7 +239,7 @@ GameObject:
   - component: {fileID: 6208887506993417628}
   - component: {fileID: 175976697661313181}
   - component: {fileID: 7879525869374659554}
-  m_Layer: 9
+  m_Layer: 12
   m_Name: PW_Plant_Mushroom_01_08_LOD3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -253,13 +253,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5332307583412907405}
-  serializedVersion: 2
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 32972213030964104}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &175976697661313181
 MeshFilter:

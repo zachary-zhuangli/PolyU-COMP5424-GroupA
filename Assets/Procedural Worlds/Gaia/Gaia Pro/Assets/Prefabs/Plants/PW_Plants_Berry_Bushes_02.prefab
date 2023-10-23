@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 891615818568331121}
   - component: {fileID: 5997811764904813602}
   - component: {fileID: 7005379626050767018}
-  m_Layer: 9
+  m_Layer: 12
   m_Name: PW_Plants_Berry_Bushes_02_LOD0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -25,13 +25,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3031451926381029802}
-  serializedVersion: 2
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 66609527195702820}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &5997811764904813602
 MeshFilter:
@@ -94,7 +94,7 @@ GameObject:
   m_Component:
   - component: {fileID: 66609527195702820}
   - component: {fileID: 621280786802409696}
-  m_Layer: 9
+  m_Layer: 12
   m_Name: PW_Plants_Berry_Bushes_02
   m_TagString: PW - Nature
   m_Icon: {fileID: 0}
@@ -108,7 +108,6 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3942898020487455799}
-  serializedVersion: 2
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -115.99478, y: 0.05988449, z: -6.313176}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -119,6 +118,7 @@ Transform:
   - {fileID: 687327520267345674}
   - {fileID: 3048947869861197338}
   m_Father: {fileID: 0}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!205 &621280786802409696
 LODGroup:
@@ -162,7 +162,7 @@ GameObject:
   - component: {fileID: 687327520267345674}
   - component: {fileID: 6902540680457080379}
   - component: {fileID: 615582903858388156}
-  m_Layer: 9
+  m_Layer: 12
   m_Name: PW_Plants_Berry_Bushes_02_LOD2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -176,13 +176,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7284660583250697022}
-  serializedVersion: 2
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 66609527195702820}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &6902540680457080379
 MeshFilter:
@@ -246,7 +246,7 @@ GameObject:
   - component: {fileID: 3920556504637220551}
   - component: {fileID: 4119404005218224303}
   - component: {fileID: 5450780270921414760}
-  m_Layer: 9
+  m_Layer: 12
   m_Name: PW_Plants_Berry_Bushes_02_LOD1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -260,13 +260,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8044473641618117457}
-  serializedVersion: 2
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 66609527195702820}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &4119404005218224303
 MeshFilter:
@@ -324,7 +324,6 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    serializedVersion: 3
     m_TransformParent: {fileID: 66609527195702820}
     m_Modifications:
     - target: {fileID: 7205181542510271266, guid: 597f52e34c0c90d4d8f402e4e3c10d4c,
@@ -335,7 +334,7 @@ PrefabInstance:
     - target: {fileID: 7205181542510271266, guid: 597f52e34c0c90d4d8f402e4e3c10d4c,
         type: 3}
       propertyPath: m_Layer
-      value: 9
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 7205181542510271266, guid: 597f52e34c0c90d4d8f402e4e3c10d4c,
         type: 3}
@@ -398,9 +397,6 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 597f52e34c0c90d4d8f402e4e3c10d4c, type: 3}
 --- !u!23 &2599784755342132984 stripped
 MeshRenderer:
