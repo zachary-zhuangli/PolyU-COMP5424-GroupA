@@ -14,8 +14,18 @@ public class SwordAttackAudio : MonoBehaviour
 	// 当开始发生碰撞时，Unity会自动调用此函数
 	void OnCollisionEnter(Collision collision)
 	{
+		OnCollisionEvent(collision.gameObject);
+	}
+
+	void OnTriggerEnter(Collider collider)
+	{
+		OnCollisionEvent(collider.gameObject);
+	}
+
+	void OnCollisionEvent(GameObject gameObject)
+	{
 		// 检查碰撞的对象是否是盾
-		if (collision.gameObject.CompareTag("Shield"))
+		if (gameObject.CompareTag("Shield"))
 		{
 			if (Time.time - lastShieldHitTime >= cooldownTime)
 			{
@@ -25,7 +35,7 @@ public class SwordAttackAudio : MonoBehaviour
 			}
 		}
 		// 检查碰撞的对象是否是怪物
-		else if (collision.gameObject.CompareTag("Respawn"))
+		else if (gameObject.CompareTag("Respawn"))
 		{
 			attackAudioSource.clip = monsterClip;
 			attackAudioSource.Play();

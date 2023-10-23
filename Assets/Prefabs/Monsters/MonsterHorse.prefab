@@ -3777,14 +3777,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _interpolationDataSource: 0
-  _hp: 20
-  _maxHp: 20
+  _hp: 50
+  _maxHp: 50
   _defense: 0
   _isDead: 0
   poweredByAI: 1
-  OnDeathEvent:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!114 &9138427664310418737
 MonoBehaviour:
   m_ObjectHideFlags: 0

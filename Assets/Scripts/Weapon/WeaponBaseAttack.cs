@@ -34,7 +34,7 @@ public class WeaponBaseAttack : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
 
-        if (!this.isActiveAndEnabled)
+        if (!this.isActiveAndEnabled || !collision.gameObject.CompareTag("Respawn"))
         {
             return;
         }
@@ -42,11 +42,24 @@ public class WeaponBaseAttack : MonoBehaviour
         OnCollisionEvent(collision);
     }
 
+    private void OnTriggerEnter(Collider collider)
+    {
+
+        if (!this.isActiveAndEnabled || !collider.gameObject.CompareTag("Respawn"))
+        {
+            return;
+        }
+
+        FightingSystem fs = collider.GetComponent<FightingSystem>();
+        if (fs)
+        {
+            fs.RPC_Attacked(Damage, GetComponent<Transform>().position, (int)LastDamageImpulse);
+        }
+    }
+
     public virtual void OnCollisionEvent(Collision collision)
     {
         LastDamageImpulse = collision.impulse.magnitude;
-
-        Debug.Log("<><><><>== Attack: " + LastDamageImpulse); 
 
         if (LastDamageImpulse >= MinImpulse)
         {
@@ -55,7 +68,6 @@ public class WeaponBaseAttack : MonoBehaviour
             FightingSystem fs = collision.gameObject.GetComponent<FightingSystem>();
             if (fs)
             {
-                Debug.Log("<><><><>== Make Damage!"); 
                 // d.DealDamage(Damage, collision.GetContact(0).point, collision.GetContact(0).normal, true, gameObject, collision.gameObject);
                 fs.RPC_Attacked(Damage, GetComponent<Transform>().position, (int)LastDamageImpulse);
             }
