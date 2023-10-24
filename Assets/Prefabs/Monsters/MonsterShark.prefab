@@ -2612,14 +2612,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _interpolationDataSource: 0
-  _hp: 50
-  _maxHp: 50
+  _hp: 100
+  _maxHp: 100
   _defense: 0
   _isDead: 0
   poweredByAI: 1
-  OnDeathEvent:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!114 &4812201506485296391
 MonoBehaviour:
   m_ObjectHideFlags: 0

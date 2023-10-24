@@ -11,9 +11,22 @@ public class SwordVibration : MonoBehaviour
 		if (collision.gameObject.CompareTag("Respawn"))
 		{
 			// 当与带有"Respawn"标签的对象发生碰撞时，触发手柄震动
-			InputDevice device = InputDevices.GetDeviceAtXRNode(XRNode.RightHand);
-			device.SendHapticImpulse(0, 1.0f, 0.3f);
+			RightHandHapticImpulse();
 		}
 	}
+
+	void OnTriggerEnter(Collider collider)
+	{
+		if (collider.gameObject.CompareTag("Respawn"))
+		{
+			RightHandHapticImpulse();
+		}
+	}
+
+    void RightHandHapticImpulse()
+    {
+        InputDevice device = InputDevices.GetDeviceAtXRNode(XRNode.RightHand);
+        device.SendHapticImpulse(0, 1.0f, 0.3f);
+    }
 
 }
