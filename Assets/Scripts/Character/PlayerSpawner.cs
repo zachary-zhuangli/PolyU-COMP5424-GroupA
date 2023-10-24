@@ -29,7 +29,6 @@ public class PlayerSpawner : NetworkBehaviour
             return;
         }
 
-        Debug.Log("Player and XRTarget spawn: " + Runner.LocalPlayer);
         Runner.Spawn(XRPosPrefab, new Vector3(0, 0, 0), Quaternion.identity, Runner.LocalPlayer);
         this.localPlayer = Runner.Spawn(PlayerPrefab, new Vector3(-77, 121, -28), Quaternion.identity, Runner.LocalPlayer);
         HideLocalPlayer(this.localPlayer);
