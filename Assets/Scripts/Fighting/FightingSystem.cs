@@ -12,16 +12,16 @@ public class FightingSystem : NetworkBehaviour
     // static int RAGDOLL_FORCE = 400;
 
     [SerializeField]
-    [Networked]
+    [Networked(OnChanged = nameof(HealthChanged))]
     public int hp { get; set; } = FightingSystem.DEFAULT_MAX_HP;
     [SerializeField]
-    [Networked]
+    [Networked(OnChanged = nameof(HealthChanged))]
     public int maxHp { get; set; } = FightingSystem.DEFAULT_MAX_HP;
     [SerializeField]
     [Networked]
     public int defense { get; set; } = FightingSystem.DEFAULT_DEFENSE;
     [SerializeField]
-    [Networked]
+    [Networked(OnChanged = nameof(HealthChanged))]
     public bool isDead { get; set; } = false;
 
     // 是否是AI控制（momster）；
@@ -29,7 +29,7 @@ public class FightingSystem : NetworkBehaviour
     [SerializeField]
     public bool poweredByAI = true;
 
-	public override void Spawned()
+    public override void Spawned()
     {
         if (Object.HasStateAuthority && poweredByAI)
         {
@@ -92,7 +92,7 @@ public class FightingSystem : NetworkBehaviour
         {
             isDead = true;
             hp = 0;
-		}
+        }
     }
 
     // 提供给外部系统同步HP数据
@@ -123,7 +123,7 @@ public class FightingSystem : NetworkBehaviour
         }
     }
 
-    private void SyncHealthDataToAI()
+    public void SyncHealthDataToAI()
     {
         if (GetComponent<EmeraldAIEventsManager>())
         {
@@ -132,7 +132,8 @@ public class FightingSystem : NetworkBehaviour
         }
     }
 
-    public void InitHealthStatusForAI() {
+    public void InitHealthStatusForAI()
+    {
         SyncHealthDataToAI();
     }
 
@@ -144,5 +145,14 @@ public class FightingSystem : NetworkBehaviour
             tempGO = new GameObject(tempGOName);
         }
         return tempGO.transform;
+    }
+
+    private static void HealthChanged(Changed<FightingSystem> changed)
+    {
+        // 为非本地玩家的AI对象同步生命数据到AI系统
+        if (!changed.Behaviour.Object.HasStateAuthority && changed.Behaviour.poweredByAI)
+        {
+            changed.Behaviour.SyncHealthDataToAI();
+        }
     }
 }

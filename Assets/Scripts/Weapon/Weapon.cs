@@ -67,7 +67,7 @@ public class Weapon : MonoBehaviour
                 grabbable.transform.localPosition = Vector3.zero;
                 grabbable.transform.localEulerAngles = Vector3.zero;
                 swordObj.SetActive(true);
-                rightHand.SetActive(false);
+                // rightHand.SetActive(false);
 
                 follow1.enabled = false;
                 follow2.enabled = false;
