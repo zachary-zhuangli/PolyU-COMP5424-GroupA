@@ -11,6 +11,8 @@ public class PlayerSpawner : NetworkBehaviour
     public NetworkPrefabRef PlayerPrefab = NetworkPrefabRef.Empty;
     public NetworkPrefabRef XRPosPrefab = NetworkPrefabRef.Empty;
 
+    public NetworkObject localPlayer { get; private set; }
+
     public override void Spawned()
     {
         if (PlayerPrefab == NetworkPrefabRef.Empty)
@@ -26,8 +28,8 @@ public class PlayerSpawner : NetworkBehaviour
 
         Debug.Log("Player and XRTarget spawn: " + Runner.LocalPlayer);
         Runner.Spawn(XRPosPrefab, new Vector3(0, 0, 0), Quaternion.identity, Runner.LocalPlayer);
-        var localPlayerGO = Runner.Spawn(PlayerPrefab, new Vector3(-77, 121, -28), Quaternion.identity, Runner.LocalPlayer);
-        HideLocalPlayer(localPlayerGO);
+        this.localPlayer = Runner.Spawn(PlayerPrefab, new Vector3(-77, 121, -28), Quaternion.identity, Runner.LocalPlayer);
+        HideLocalPlayer(this.localPlayer);
     }
 
     private void HideLocalPlayer(NetworkObject playerGO)
