@@ -48,9 +48,12 @@ public class NetworkMonsterAIController : NetworkBehaviour, IStateAuthorityChang
 
         if (GetComponent<FightingSystem>())
         {
-            try {
+            try
+            {
                 GetComponent<FightingSystem>().InitHealthStatusForAI();
-            } catch (System.Exception e) {
+            }
+            catch (System.Exception e)
+            {
                 Debug.LogError("InitHealthStatusForAI failed: " + e.Message);
             }
         }
@@ -65,5 +68,13 @@ public class NetworkMonsterAIController : NetworkBehaviour, IStateAuthorityChang
         GetComponent<EmeraldAIInitializer>().enabled = false;
         GetComponent<EmeraldAIBehaviors>().enabled = false;
         GetComponent<UnityEngine.AI.NavMeshAgent>().enabled = false;
+
+        // For Online Test(TODO)
+        // EmeraldAISystem emeraldAISystem = GetComponent<EmeraldAISystem>();
+        //         // avoid excute Update
+        //         // emeraldAISystem.DisableAIWhenNotInViewRef = EmeraldAISystem.YesOrNo.Yes;
+        //         // emeraldAISystem.OptimizedStateRef = EmeraldAISystem.OptimizedState.Active;
+        // emeraldAISystem.TargetDetectionActive = false;
+        // GetComponent<EmeraldAIDetection>().enabled = false;
     }
 }
