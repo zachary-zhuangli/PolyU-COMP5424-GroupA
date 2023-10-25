@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using Fusion;
 
 namespace BNG {
 
@@ -9,7 +10,7 @@ namespace BNG {
     /// Override this class to respond to various events that happen to this Grabbable
     /// </summary>
     [RequireComponent(typeof(Grabbable))]
-    public abstract class GrabbableEvents : MonoBehaviour {
+    public abstract class GrabbableEvents : NetworkBehaviour {
 
         protected Grabbable grab;
         protected Grabber thisGrabber;

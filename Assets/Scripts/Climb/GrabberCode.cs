@@ -5,6 +5,8 @@ using UnityEngine;
 public class GrabberCode : MonoBehaviour
 {
     public GameObject climbObj;
+    public PlayerSpawner playerSpawner;
+    
 
     // Start is called before the first frame update
     void Start()
@@ -24,6 +26,12 @@ public class GrabberCode : MonoBehaviour
             GameObject obj = GameObject.Instantiate(climbObj,this.transform.position,this.transform.rotation);
             obj.SetActive(true);
             Destroy(obj,20);
+
+            // 攀爬时禁用plantFeet（使人物avatar的脚可以离开地面）
+            // TODO: 后续实现攀爬完成后重置plantFeet状态（phase3）
+            if (playerSpawner?.localPlayer) {
+                playerSpawner.localPlayer.GetComponent<CharacterIKSetup>().SetFeetPlant(false);
+            }
         }
     }
 }
