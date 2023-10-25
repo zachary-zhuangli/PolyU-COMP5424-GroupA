@@ -9,6 +9,9 @@ using UnityEngine;
 // 网络玩家的Avatar IK target使用通过网络同步过来的XR设备数据
 public class CharacterIKSetup : NetworkBehaviour
 {
+    [Networked(OnChanged = nameof(FeetPlantChanged))]
+    public bool isFeetPlant { get; set; } = true;
+
     public override void Spawned()
     {
         if (Object.HasStateAuthority)
@@ -46,5 +49,16 @@ public class CharacterIKSetup : NetworkBehaviour
             .Find(
                 sync => sync.GetComponent<XRTargetTransformSync>() && sync.GetComponent<NetworkObject>().StateAuthority.PlayerId == playerId
             );
+    }
+
+    public void SetFeetPlant(bool isPlant)
+    {
+        GetComponent<VRIK>().solver.plantFeet = isPlant;
+        isFeetPlant = isPlant;
+    }
+
+    private static void FeetPlantChanged(Changed<CharacterIKSetup> changed)
+    {
+        changed.Behaviour.GetComponent<VRIK>().solver.plantFeet = changed.Behaviour.isFeetPlant;
     }
 }

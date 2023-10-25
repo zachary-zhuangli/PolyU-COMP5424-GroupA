@@ -5,101 +5,128 @@ using BNG;
 public class Weapon : MonoBehaviour
 {
     public List<GameObject> weapons = new List<GameObject>();
-    private int index;
-    public GameObject obj;
-    public Grabbable grabbable;
-    public Grabbable grabbable1;
-    public Grabbable grabbable2;
-    public Grabber grabber;
-    public Grabber grabber2;
-    public Follow follow;
-    public Follow follow1;
-    public Follow follow2;
+    public GameObject leftHandModel;
+    public GameObject rightHandModel;
+    public Grabbable grabbableBow;
+    public Grabbable grabbableSword;
+    public Grabber grabberLeft;
+    public Grabber grabberRight;
+    public Follow bowFollow;
+    public Follow swordFollow;
+    public GameObject bowObj;
     public GameObject swordObj;
-    public GameObject rightHand;
-    // Start is called before the first frame update
-    void Start()
+
+    private int index = 0; // 0: nothing, 1: sword, 2: bow
+
+    private Vector3 followedSwordPosBackup;
+    private Vector3 followedSwordEulerAnglesBackup;
+
+    public void ChangeWeapon(int weaponIndex)
     {
-        follow.enabled = false;
-        follow1.enabled = true;
-        follow2.enabled = true;
-        grabber.GrabGrabbable(grabbable);
-        grabbable1.gameObject.SetActive(false);
-        grabbable2.gameObject.SetActive(false);
+        if (weaponIndex == 1)
+        {
+            // hold sword
+            ReleaseLeftHand();
+            ReleaseRightHand();
+            DisableSwordFollow();
+            EnableBowFollow();
+            grabbableSword.enabled = true;
+            grabbableBow.enabled = false;
+
+            grabberRight.GrabGrabbable(grabbableSword);
+
+            SetActive(swordObj, true);
+            SetActive(bowObj, false);
+            SetActive(leftHandModel, true);
+        }
+        else if (weaponIndex == 2)
+        {
+            // hold bow
+            ReleaseLeftHand();
+            ReleaseRightHand();
+            EnableSwordFollow();
+            DisableBowFollow();
+            grabbableSword.enabled = false;
+            grabbableBow.enabled = true;
+
+            grabberLeft.GrabGrabbable(grabbableBow);
+
+            SetActive(swordObj, false);
+            SetActive(bowObj, true);
+            SetActive(leftHandModel, false);
+        }
+        else
+        {
+            // hold nothing
+            ReleaseLeftHand();
+            ReleaseRightHand();
+            EnableSwordFollow();
+            EnableBowFollow();
+            grabbableSword.enabled = false;
+            grabbableBow.enabled = false;
+
+            SetActive(swordObj, false);
+            SetActive(bowObj, false);
+            SetActive(leftHandModel, true);
+        }
     }
 
-    // Update is called once per frame
     void Update()
     {
-        //if (Input.GetKeyDown(KeyCode.U) || InputBridge.Instance.AButtonDown)
-        //{
-        //    follow.enabled = false;
-        //    grabber.GrabGrabbable(grabbable);
-        //}
-        //if (Input.GetKeyDown(KeyCode.Y) || InputBridge.Instance.BButtonDown)
-        //{
-        //    print("111");
-        //    //grabbable.Release(Vector3.zero,Vector3.zero);
-        //    //grabbable.ResetGrabbing();
-        //    grabber.TryRelease();
-        //    follow.enabled = true;
-        //}
         if (Input.GetKeyDown(KeyCode.T) || InputBridge.Instance.XButtonDown)
         {
             index++;
-            if (index == weapons.Count)
-            {
-                index = 0;
-            }
-            print(index);
-            if (index == 0)
-            {
-                grabbable.enabled = true;
-                follow.enabled = false;
-                grabber.GrabGrabbable(grabbable);
-            }
-            if (index == 1)
-            {
-                grabber.TryRelease();
-                follow.enabled = true;
-                grabbable.enabled = false;
-                grabbable.transform.parent = follow.transform;
-                grabbable.transform.localPosition = Vector3.zero;
-                grabbable.transform.localEulerAngles = Vector3.zero;
-                swordObj.SetActive(true);
-                // rightHand.SetActive(false);
+            index = index % 3;
+            ChangeWeapon(index);
+        }
+    }
 
-                follow1.enabled = false;
-                follow2.enabled = false;
-                grabber.GrabGrabbable(grabbable1);
-                grabber2.GrabGrabbable(grabbable2);
-                grabbable1.enabled = true;
-                grabbable2.enabled = true;
-            }
-            if (index == 2)
-            {
-                rightHand.SetActive(true);
-                swordObj.SetActive(false);
+    private void ReleaseRightHand()
+    {
+        grabberRight.TryRelease();
+        grabbableSword.transform.SetParent(swordFollow.transform);
+    }
 
-                grabber.TryRelease();
-                grabber2.TryRelease();
-                follow1.enabled = true;
-                follow2.enabled = true;
-                grabbable1.enabled = false;
-                grabbable2.enabled = false;
-                grabbable1.transform.parent = follow1.transform;
-                grabbable1.transform.localPosition = Vector3.zero;
-                grabbable1.transform.localEulerAngles = follow1.GetComponent<Follow>().rotate;
-                grabbable2.transform.parent = follow2.transform;
-                grabbable2.transform.localPosition = Vector3.zero;
-                grabbable2.transform.localEulerAngles = follow2.GetComponent<Follow>().rotate;
+    private void ReleaseLeftHand()
+    {
+        grabberLeft.TryRelease();
+        grabbableBow.transform.SetParent(bowFollow.transform);
+    }
 
-            }
-            for (int i = 0; i < weapons.Count; i++)
-            {
-                weapons[i].SetActive(false);
-            }
-            weapons[index].SetActive(true);
+    private void DisableSwordFollow()
+    {
+        swordFollow.enabled = false;
+        if (followedSwordEulerAnglesBackup == null)
+        {
+            followedSwordEulerAnglesBackup = new Vector3(swordObj.transform.localEulerAngles.x, swordObj.transform.localEulerAngles.y, swordObj.transform.localEulerAngles.z);
+        }
+    }
+
+    private void EnableSwordFollow()
+    {
+        swordFollow.enabled = true;
+        swordObj.transform.localPosition = Vector3.zero;
+        swordObj.transform.localEulerAngles = followedSwordEulerAnglesBackup;
+    }
+
+    private void DisableBowFollow()
+    {
+        bowFollow.enabled = false;
+    }
+
+    private void EnableBowFollow()
+    {
+        bowFollow.enabled = true;
+        bowObj.transform.localPosition = Vector3.zero;
+        bowObj.transform.localEulerAngles = Vector3.zero;
+    }
+
+    private void SetActive(GameObject gameObject, bool active)
+    {
+        gameObject.SetActive(active);
+        if (gameObject.GetComponent<NetworkGOActive>())
+        {
+            gameObject.GetComponent<NetworkGOActive>().active = active;
         }
     }
 }

@@ -1,12 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Fusion;
 
 namespace BNG {
     /// <summary>
     /// A Grabbable object that can stick to objects and deal damage
     /// </summary>
-    public class Arrow : MonoBehaviour {
+    public class Arrow : NetworkBehaviour {
         Rigidbody rb;
         Grabbable grab;
         public bool Flying = false;
@@ -26,6 +27,10 @@ namespace BNG {
 
         // Start is called before the first frame update
         void Start() {
+            if (!Object.HasStateAuthority) {
+                return;
+            }
+
             rb = GetComponent<Rigidbody>();
             impactSound = GetComponent<AudioSource>();
             ShaftCollider = GetComponent<Collider>();
@@ -42,6 +47,9 @@ namespace BNG {
         }
 
         void FixedUpdate() {
+            if (!Object.HasStateAuthority) {
+                return;
+            }
 
             bool beingHeld = grab != null && grab.BeingHeld;
 
@@ -82,7 +90,10 @@ namespace BNG {
             yield return new WaitForSeconds(destroyTime);
 
             if (grab != null && !grab.BeingHeld && transform.parent == null) {
-                Destroy(this.gameObject);
+                // Destroy(this.gameObject);
+                if (Object.HasStateAuthority) {
+                    Runner.Despawn(Object);
+                }
             }
         }
 

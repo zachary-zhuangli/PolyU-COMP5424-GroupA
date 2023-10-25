@@ -1752,6 +1752,8 @@ GameObject:
   - component: {fileID: 788403267267814779}
   - component: {fileID: 788403267267814778}
   - component: {fileID: -5757747362628868901}
+  - component: {fileID: -8383655104396448404}
+  - component: {fileID: 4783020198121053355}
   m_Layer: 10
   m_Name: Arrow2
   m_TagString: Untagged
@@ -1892,6 +1894,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 470b955f5c71e0742bd023ab27b0629a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _interpolationDataSource: 0
   Flying: 0
   ZVel: 0
   ShaftCollider: {fileID: 788403267267814781}
@@ -2027,10 +2030,65 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18fef73f3146e47c0bf47c473b275ff4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _interpolationDataSource: 0
   Damage: 5
   ColliderRigidbody: {fileID: 0}
   MinImpulse: 0.1
   LastDamageImpulse: 0
+--- !u!114 &-8383655104396448404
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 788403267267814777}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1552182283, guid: e725a070cec140c4caffb81624c8c787, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObjectInterest: 1
+  DefaultInterestGroups: []
+  DestroyWhenStateAuthorityLeaves: 1
+  AllowStateAuthorityOverride: 0
+  AoiPositionSource: {fileID: 0}
+  Flags: 2305
+  NetworkGuid:
+    RawGuidValue: 0517aea182a79e94aa450149bb361b07
+  NestedObjects: []
+  NetworkedBehaviours:
+  - {fileID: 788403267267814780}
+  - {fileID: -5757747362628868901}
+  - {fileID: 4783020198121053355}
+  SimulationBehaviours: []
+--- !u!114 &4783020198121053355
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 788403267267814777}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 158639473, guid: e725a070cec140c4caffb81624c8c787, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _interpolationDataSource: 0
+  InterpolationSpace: 0
+  InterpolationTarget: {fileID: 3127220270634209780}
+  InterpolateErrorCorrection: 1
+  InterpolatedErrorCorrectionSettings:
+    MinRate: 3.3
+    MaxRate: 10
+    PosBlendStart: 0.25
+    PosBlendEnd: 1
+    PosMinCorrection: 0.025
+    PosTeleportDistance: 2
+    RotBlendStart: 0.1
+    RotBlendEnd: 0.5
+    RotTeleportRadians: 1.5
+  UseLegacySharedModeInterpolation: 0
+  TargetInterpolationDelay: 0.03
 --- !u!1 &788403267355979243
 GameObject:
   m_ObjectHideFlags: 0
