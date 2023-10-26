@@ -1416,6 +1416,7 @@ GameObject:
   - component: {fileID: -1784573628932235136}
   - component: {fileID: 8224730082774469079}
   - component: {fileID: 4812201506485296391}
+  - component: {fileID: 8583459456210265835}
   m_Layer: 0
   m_Name: MonsterShark
   m_TagString: Respawn
@@ -1488,7 +1489,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 01dc8b9985634654b84aa93bd1413eaf, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 94574c805e59c064ab2fe0a6b7207f6d, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -2114,7 +2115,7 @@ MonoBehaviour:
   MeleeTooCloseDistance: 0.001
   RangedTooCloseDistance: 5
   AttackDistance: 2.5
-  MeleeAttackDistance: 3
+  MeleeAttackDistance: 1
   RangedAttackDistance: 25
   RunAttackDistance: 3
   CautiousSeconds: 8
@@ -2651,7 +2652,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb00652c19022ff4d8da027b4115d0fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  deathSound: {fileID: 8300000, guid: 01dc8b9985634654b84aa93bd1413eaf, type: 3}
+  deathSound: {fileID: 8300000, guid: 94574c805e59c064ab2fe0a6b7207f6d, type: 3}
+--- !u!114 &8583459456210265835
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6304421234382775686}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d2ee61308d5cf4031891008f12326ec6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  detectionSound: {fileID: 8300000, guid: 99ecec1f5e5b9154f86a86947922f473, type: 3}
 --- !u!1 &6459153760852957841
 GameObject:
   m_ObjectHideFlags: 0

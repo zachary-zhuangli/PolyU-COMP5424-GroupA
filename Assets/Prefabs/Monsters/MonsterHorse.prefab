@@ -2581,6 +2581,7 @@ GameObject:
   - component: {fileID: 8176030802109784136}
   - component: {fileID: 2849079355741834507}
   - component: {fileID: 9138427664310418737}
+  - component: {fileID: 5361501483444380126}
   m_Layer: 0
   m_Name: MonsterHorse
   m_TagString: Respawn
@@ -3796,6 +3797,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   deathSound: {fileID: 8300000, guid: 01dc8b9985634654b84aa93bd1413eaf, type: 3}
+--- !u!114 &5361501483444380126
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9058552373720259277}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d2ee61308d5cf4031891008f12326ec6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  detectionSound: {fileID: 8300000, guid: e67df34f07da95b408072377275df18e, type: 3}
 --- !u!1 &9111371585775729046
 GameObject:
   m_ObjectHideFlags: 0
