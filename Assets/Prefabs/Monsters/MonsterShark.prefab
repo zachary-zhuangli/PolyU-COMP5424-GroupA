@@ -1464,6 +1464,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!65 &6610339102578074214
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1612,8 +1613,23 @@ MonoBehaviour:
   MeleeAttackPickType: 1
   MeleeAttacks:
   - AttackAnimaition: 0
-    MinDamage: 1
-    MaxDamage: 5
+    MinDamage: 20
+    MaxDamage: 50
+    AttackOdds: 1
+    AttackImpactEffect: {fileID: 0}
+  - AttackAnimaition: 1
+    MinDamage: 20
+    MaxDamage: 50
+    AttackOdds: 1
+    AttackImpactEffect: {fileID: 0}
+  - AttackAnimaition: 2
+    MinDamage: 20
+    MaxDamage: 50
+    AttackOdds: 1
+    AttackImpactEffect: {fileID: 0}
+  - AttackAnimaition: 3
+    MinDamage: 50
+    MaxDamage: 100
     AttackOdds: 1
     AttackImpactEffect: {fileID: 0}
   MeleeAttacksListIndex: 0
@@ -1748,7 +1764,7 @@ MonoBehaviour:
   TotalCombatHitAnimations: 1
   TotalRangedCombatHitAnimations: 1
   TotalEmoteAnimations: 1
-  TotalAttackAnimations: 1
+  TotalAttackAnimations: 4
   TotalRangedAttackAnimations: 1
   TotalRunAttackAnimations: 1
   TotalRangedRunAttackAnimations: 1
@@ -1893,6 +1909,12 @@ MonoBehaviour:
     AnimationClip: {fileID: 7400000, guid: 04592e537df354bbcbb381590c01743a, type: 2}
   AttackAnimationList:
   - AnimationSpeed: 1
+    AnimationClip: {fileID: 7400000, guid: 4695b14231b914b6aaf2a7341c2b0328, type: 2}
+  - AnimationSpeed: 1
+    AnimationClip: {fileID: 7400000, guid: ba2339e97629048c2b2427cc4374f9d4, type: 2}
+  - AnimationSpeed: 1
+    AnimationClip: {fileID: 7400000, guid: 06581bcb1e9c2459aa731b0be00ad8d1, type: 2}
+  - AnimationSpeed: 1
     AnimationClip: {fileID: 7400000, guid: 2dd71a52d042e4d76a3f5381afaca0fe, type: 2}
   RunAttackAnimationList:
   - AnimationSpeed: 0
@@ -1910,11 +1932,11 @@ MonoBehaviour:
   RangedCombatHitAnimationList: []
   RangedRunAttackAnimationList: []
   RangedDeathAnimationList: []
-  Attack1Animation: {fileID: 7400000, guid: 2dd71a52d042e4d76a3f5381afaca0fe, type: 2}
-  Attack2Animation: {fileID: 0}
-  Attack3Animation: {fileID: 0}
-  Attack4Animation: {fileID: 0}
-  Attack5Animation: {fileID: 0}
+  Attack1Animation: {fileID: 7400000, guid: 4695b14231b914b6aaf2a7341c2b0328, type: 2}
+  Attack2Animation: {fileID: 7400000, guid: ba2339e97629048c2b2427cc4374f9d4, type: 2}
+  Attack3Animation: {fileID: 7400000, guid: 06581bcb1e9c2459aa731b0be00ad8d1, type: 2}
+  Attack4Animation: {fileID: 7400000, guid: 2dd71a52d042e4d76a3f5381afaca0fe, type: 2}
+  Attack5Animation: {fileID: 7400000, guid: 2dd71a52d042e4d76a3f5381afaca0fe, type: 2}
   Attack6Animation: {fileID: 0}
   RunAttack1Animation: {fileID: 0}
   RunAttack2Animation: {fileID: 0}
@@ -2047,14 +2069,14 @@ MonoBehaviour:
   ObstructionDetectionUpdateTimer: 0
   CurrentHealth: 0
   StartingHealth: 15
-  DetectionRadius: 18
+  DetectionRadius: 15
   CurrentDamageAmount: 5
   DamageAmountRun: 5
   WanderRadius: 25
-  TabNumber: 3
+  TabNumber: 1
   TemperamentTabNumber: 2
   DetectionTagsTabNumber: 0
-  AnimationTabNumber: 0
+  AnimationTabNumber: 2
   SoundTabNumber: 0
   MovementTabNumber: 0
   WeaponTypeTabNumber: 0
@@ -2063,7 +2085,7 @@ MonoBehaviour:
   AttackAnimationNumber: 1
   RunAttackAnimationNumber: 1
   IdleAnimationNumber: 1
-  CombatTabNumber: 1
+  CombatTabNumber: 0
   FactionsAndTagTabNumber: 0
   EventTabNumber: 0
   MinimumWaitTime: 3
@@ -2085,11 +2107,11 @@ MonoBehaviour:
   ExpandedFieldOfViewAngle: 300
   fieldOfViewAngle: 180
   fieldOfViewAngleRef: 0
-  MaxChaseDistance: 30
+  MaxChaseDistance: 50
   AngleNeededToTurn: 10
   AngleNeededToTurnRunning: 30
   TooCloseDistance: 1
-  MeleeTooCloseDistance: 0.01
+  MeleeTooCloseDistance: 0.001
   RangedTooCloseDistance: 5
   AttackDistance: 2.5
   MeleeAttackDistance: 3
@@ -2209,14 +2231,14 @@ MonoBehaviour:
   BehaviorRef: 3
   DetectionTypeRef: 0
   MaxChaseDistanceTypeRef: 0
-  ConfidenceRef: 1
+  ConfidenceRef: 2
   OptimizedStateRef: 1
   CurrentDetectionRef: 1
   TargetTypeRef: 0
   CombatStateRef: 0
   CombatTypeRef: 0
   RefillHealthType: 2
-  WanderTypeRef: 0
+  WanderTypeRef: 2
   WaypointTypeRef: 0
   AlignmentQualityRef: 1
   ObstructionDetectionQualityRef: 1
