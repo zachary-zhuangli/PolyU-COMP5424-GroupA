@@ -449,6 +449,8 @@ MonoBehaviour:
   _interpolationDataSource: 0
   effects:
   - RawGuidValue: 9ba5f2cf7c5194fb39193705833e7440
+  - RawGuidValue: 87f98e09dead345a0885bf9f2cfac0f7
+  - RawGuidValue: 9b9c4c26b6908455bb805aa8ca634ffc
 --- !u!114 &-3909021627926979873
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -36,22 +36,34 @@ public class SwordSkills : NetworkBehaviour
         {
             ReleaseBSkill();
         }
+        else if (Input.GetKeyDown(KeyCode.LeftShift) || InputBridge.Instance.RightGripDown) {
+            ReleaseGribSkill();
+        }
+    }
+
+    void ReleaseGribSkill()
+    {
+        DestroySkillGO();
+        lastSkillNO = Runner.Spawn(effects[0],
+            gameObject.transform.position - Vector3.up * 1.5f,
+            headTargetTransform.rotation, Runner.LocalPlayer);
+        lastSkillNO.gameObject.transform.localScale = new Vector3(2, 0.8f, 2);
     }
 
     void ReleaseASkill()
     {
         DestroySkillGO();
-        lastSkillNO = Runner.Spawn(effects[0],
-            gameObject.transform.position - Vector3.up * 1f,
+        lastSkillNO = Runner.Spawn(effects[1],
+            gameObject.transform.position - Vector3.up * 0.5f,
             headTargetTransform.rotation, Runner.LocalPlayer);
-        lastSkillNO.gameObject.transform.localScale = new Vector3(2, 1, 2);
+        lastSkillNO.gameObject.transform.localScale = new Vector3(1.5f, 1.5f, 1.5f);
     }
 
     void ReleaseBSkill()
     {
         DestroySkillGO();
-        lastSkillNO = Runner.Spawn(effects[1],
-            gameObject.transform.position - Vector3.up * 1f,
+        lastSkillNO = Runner.Spawn(effects[2],
+            gameObject.transform.position - Vector3.up * 1.5f,
             headTargetTransform.rotation, Runner.LocalPlayer);
         lastSkillNO.gameObject.transform.localScale = new Vector3(2, 2, 2);
     }
