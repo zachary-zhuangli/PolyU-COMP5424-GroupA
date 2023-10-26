@@ -77,6 +77,7 @@ GameObject:
   - component: {fileID: 5890221971593947438}
   - component: {fileID: 868731748079954413}
   - component: {fileID: -3054211878102980712}
+  - component: {fileID: 3627994483145094491}
   m_Layer: 10
   m_Name: Sword
   m_TagString: Sword
@@ -164,7 +165,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _interpolationDataSource: 0
   Damage: 5
-  ColliderRigidbody: {fileID: 0}
   MinImpulse: 0.1
   LastDamageImpulse: 0
 --- !u!65 &4519570930879155303
@@ -419,6 +419,7 @@ MonoBehaviour:
   - {fileID: 4519570930879155323}
   - {fileID: 868731748079954413}
   - {fileID: -3054211878102980712}
+  - {fileID: 3627994483145094491}
   SimulationBehaviours: []
 --- !u!114 &868731748079954413
 MonoBehaviour:
@@ -462,3 +463,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _interpolationDataSource: 0
   _active: 1
+--- !u!114 &3627994483145094491
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8755379528617727469}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f524f1b5d1de14303b81a374047b82fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _interpolationDataSource: 0
+  effects:
+  - RawGuidValue: 9ba5f2cf7c5194fb39193705833e7440
