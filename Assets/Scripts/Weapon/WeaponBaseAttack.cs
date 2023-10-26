@@ -14,7 +14,7 @@ public class WeaponBaseAttack : NetworkBehaviour
     /// <summary>
     /// Used to determine velocity of this collider
     /// </summary>
-    public Rigidbody ColliderRigidbody;
+    // public Rigidbody ColliderRigidbody;
 
     /// <summary>
     /// Minimum Amount of force necessary to do damage. Expressed as impulse.magnitude
@@ -26,10 +26,10 @@ public class WeaponBaseAttack : NetworkBehaviour
 
     private void Start()
     {
-        if (ColliderRigidbody == null)
-        {
-            ColliderRigidbody = GetComponent<Rigidbody>();
-        }
+        // if (ColliderRigidbody == null)
+        // {
+        //     ColliderRigidbody = GetComponent<Rigidbody>();
+        // }
     }
 
     private void OnCollisionEnter(Collision collision)
