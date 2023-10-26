@@ -20,7 +20,7 @@ public class MonsterDeathSound : MonoBehaviour
 		}
 
 		// 设置AudioSource的属性
-		audioSource.clip = deathSound;
+		// audioSource.clip = deathSound;
 		audioSource.playOnAwake = false;
 
 		// 获取EmeraldAISystem的引用，并设置死亡事件的监听器
@@ -41,6 +41,8 @@ public class MonsterDeathSound : MonoBehaviour
 		// 播放死亡声音
 		if (audioSource != null && deathSound != null)
 		{
+			audioSource.Stop();
+			audioSource.clip = deathSound;
 			audioSource.PlayOneShot(deathSound);
 		}
 		else

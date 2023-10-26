@@ -30,7 +30,8 @@ public class PlayerSpawner : NetworkBehaviour
         }
 
         Runner.Spawn(XRPosPrefab, new Vector3(0, 0, 0), Quaternion.identity, Runner.LocalPlayer);
-        this.localPlayer = Runner.Spawn(PlayerPrefab, new Vector3(-77, 121, -28), Quaternion.identity, Runner.LocalPlayer);
+        Transform VRHeadTransform = GameObject.Find("HeadTarget").transform;
+        this.localPlayer = Runner.Spawn(PlayerPrefab, VRHeadTransform.position - Vector3.up * 1.5f, VRHeadTransform.rotation, Runner.LocalPlayer);
         HideLocalPlayer(this.localPlayer);
         SetCharacterHeight();
     }
