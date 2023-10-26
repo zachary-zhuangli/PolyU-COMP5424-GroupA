@@ -509,9 +509,9 @@ GameObject:
   - component: {fileID: 1287552393301890620}
   - component: {fileID: 1287552393301890619}
   - component: {fileID: 8600738845573085448}
-  - component: {fileID: -3529671933432448636}
   - component: {fileID: 2505835020992679453}
   - component: {fileID: -8060629268619670042}
+  - component: {fileID: -7960984378276951081}
   m_Layer: 10
   m_Name: Bow
   m_TagString: Untagged
@@ -661,7 +661,7 @@ MonoBehaviour:
   CanGrabArrowFromKnock: 1
   ArrowPrefabName: Arrow2
   ArrowPrefab:
-    RawGuidValue: 00000000000000000000000000000000
+    RawGuidValue: 0517aea182a79e94aa450149bb361b07
   ArrowRestLeftHanded: {fileID: 5136144033269813954}
   ArrowKnock: {fileID: 1287552392493978211}
   IgnoreXPosition: 1
@@ -835,34 +835,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.04, y: 0.14690828, z: 0.08765198}
   m_Center: {x: -6.2850215e-17, y: -0.020047687, z: 0.023825996}
---- !u!114 &-3529671933432448636
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1287552393301890595}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -1552182283, guid: e725a070cec140c4caffb81624c8c787, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ObjectInterest: 1
-  DefaultInterestGroups: []
-  DestroyWhenStateAuthorityLeaves: 1
-  AllowStateAuthorityOverride: 0
-  AoiPositionSource: {fileID: 0}
-  Flags: 2305
-  NetworkGuid:
-    RawGuidValue: 17b1ce18ea2a948e2954d79ceb2d3d49
-  NestedObjects: []
-  NetworkedBehaviours:
-  - {fileID: 1287552393301890616}
-  - {fileID: 1287552393301890620}
-  - {fileID: 1287552393301890619}
-  - {fileID: 2505835020992679453}
-  - {fileID: -8060629268619670042}
-  SimulationBehaviours: []
 --- !u!114 &2505835020992679453
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -905,6 +877,34 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _interpolationDataSource: 0
   _active: 1
+--- !u!114 &-7960984378276951081
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1287552393301890595}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1552182283, guid: e725a070cec140c4caffb81624c8c787, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObjectInterest: 1
+  DefaultInterestGroups: []
+  DestroyWhenStateAuthorityLeaves: 1
+  AllowStateAuthorityOverride: 0
+  AoiPositionSource: {fileID: 0}
+  Flags: 2305
+  NetworkGuid:
+    RawGuidValue: 17b1ce18ea2a948e2954d79ceb2d3d49
+  NestedObjects: []
+  NetworkedBehaviours:
+  - {fileID: 1287552393301890616}
+  - {fileID: 1287552393301890620}
+  - {fileID: 1287552393301890619}
+  - {fileID: 2505835020992679453}
+  - {fileID: -8060629268619670042}
+  SimulationBehaviours: []
 --- !u!1 &1287552393393110548
 GameObject:
   m_ObjectHideFlags: 0

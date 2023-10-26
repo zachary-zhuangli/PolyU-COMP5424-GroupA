@@ -74,10 +74,10 @@ GameObject:
   - component: {fileID: 4519570930879155320}
   - component: {fileID: 4519570930879155321}
   - component: {fileID: 4519570930879155323}
-  - component: {fileID: 5890221971593947438}
   - component: {fileID: 868731748079954413}
   - component: {fileID: -3054211878102980712}
   - component: {fileID: 3627994483145094491}
+  - component: {fileID: -3909021627926979873}
   m_Layer: 10
   m_Name: Sword
   m_TagString: Sword
@@ -392,35 +392,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _interpolationDataSource: 0
---- !u!114 &5890221971593947438
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8755379528617727469}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -1552182283, guid: e725a070cec140c4caffb81624c8c787, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ObjectInterest: 1
-  DefaultInterestGroups: []
-  DestroyWhenStateAuthorityLeaves: 1
-  AllowStateAuthorityOverride: 0
-  AoiPositionSource: {fileID: 0}
-  Flags: 2305
-  NetworkGuid:
-    RawGuidValue: 5f3fecc1248ae4d84890220eb845855c
-  NestedObjects: []
-  NetworkedBehaviours:
-  - {fileID: 4519570930879155302}
-  - {fileID: 4519570930879155320}
-  - {fileID: 4519570930879155323}
-  - {fileID: 868731748079954413}
-  - {fileID: -3054211878102980712}
-  - {fileID: 3627994483145094491}
-  SimulationBehaviours: []
 --- !u!114 &868731748079954413
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -478,3 +449,32 @@ MonoBehaviour:
   _interpolationDataSource: 0
   effects:
   - RawGuidValue: 9ba5f2cf7c5194fb39193705833e7440
+--- !u!114 &-3909021627926979873
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8755379528617727469}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1552182283, guid: e725a070cec140c4caffb81624c8c787, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObjectInterest: 1
+  DefaultInterestGroups: []
+  DestroyWhenStateAuthorityLeaves: 1
+  AllowStateAuthorityOverride: 0
+  AoiPositionSource: {fileID: 0}
+  Flags: 2305
+  NetworkGuid:
+    RawGuidValue: 5f3fecc1248ae4d84890220eb845855c
+  NestedObjects: []
+  NetworkedBehaviours:
+  - {fileID: 4519570930879155302}
+  - {fileID: 4519570930879155320}
+  - {fileID: 4519570930879155323}
+  - {fileID: 868731748079954413}
+  - {fileID: -3054211878102980712}
+  - {fileID: 3627994483145094491}
+  SimulationBehaviours: []
