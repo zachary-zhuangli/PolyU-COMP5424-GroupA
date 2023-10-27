@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
+using Fusion;
 
 namespace BNG {
 
@@ -37,6 +38,8 @@ namespace BNG {
 
         [Tooltip("Name of the prefab used to create an arrow. Must be in a /Resources/ directory.")]
         public string ArrowPrefabName = "Arrow2";
+
+        public NetworkPrefabRef ArrowPrefab;
 
         [Tooltip("Arrow will rotate around this if bow is being held in right hand")]
         public Transform ArrowRestLeftHanded; // Arrow will rotate around this
@@ -85,6 +88,10 @@ namespace BNG {
         AudioSource audioSource;
 
         void Start() {
+            if (!Object.HasStateAuthority) {
+                return;
+            }
+
             initialKnockPosition = ArrowKnock.localPosition;
             bowGrabbable = GetComponent<Grabbable>();
             audioSource = GetComponent<AudioSource>();
@@ -103,6 +110,9 @@ namespace BNG {
         }
 
         void Update() {
+            if (!Object.HasStateAuthority) {
+                return;
+            }
 
             updateDrawDistance();
 
@@ -125,9 +135,10 @@ namespace BNG {
             // Grab an arrow by holding trigger in grab area
             if (canGrabArrowFromKnock()) {
 
-                GameObject arrow = Instantiate(Resources.Load(ArrowPrefabName, typeof(GameObject))) as GameObject;
-                arrow.transform.position = ArrowKnock.transform.position;
-                arrow.transform.LookAt(getArrowRest());
+                // GameObject arrow = Instantiate(Resources.Load(ArrowPrefabName, typeof(GameObject))) as GameObject;
+                NetworkObject arrow = Runner.Spawn(ArrowPrefab, new Vector3(0, 0, 0), Quaternion.identity, Runner.LocalPlayer);
+                arrow.gameObject.transform.position = ArrowKnock.transform.position;
+                arrow.gameObject.transform.LookAt(getArrowRest());
 
                 // Use trigger when grabbing from knock
                 Grabbable g = arrow.GetComponent<Grabbable>();

@@ -2581,6 +2581,7 @@ GameObject:
   - component: {fileID: 8176030802109784136}
   - component: {fileID: 2849079355741834507}
   - component: {fileID: 9138427664310418737}
+  - component: {fileID: 5361501483444380126}
   m_Layer: 0
   m_Name: MonsterHorse
   m_TagString: Respawn
@@ -2597,7 +2598,7 @@ Transform:
   m_GameObject: {fileID: 9058552373720259277}
   m_LocalRotation: {x: -0, y: -0.97371966, z: -0, w: 0.22775014}
   m_LocalPosition: {x: -77.44, y: 120.71, z: -26.305}
-  m_LocalScale: {x: 0.08, y: 0.08, z: 0.08}
+  m_LocalScale: {x: 0.12, y: 0.12, z: 0.12}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 1334274999390879701}
@@ -2629,6 +2630,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!65 &8176030802109784151
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2875,8 +2877,8 @@ MonoBehaviour:
   MeleeAttackPickType: 1
   MeleeAttacks:
   - AttackAnimaition: 0
-    MinDamage: 1
-    MaxDamage: 5
+    MinDamage: 10
+    MaxDamage: 20
     AttackOdds: 1
     AttackImpactEffect: {fileID: 0}
   MeleeAttacksListIndex: 0
@@ -3310,14 +3312,14 @@ MonoBehaviour:
   ObstructionDetectionUpdateTimer: 0
   CurrentHealth: 0
   StartingHealth: 15
-  DetectionRadius: 18
+  DetectionRadius: 20
   CurrentDamageAmount: 5
   DamageAmountRun: 5
   WanderRadius: 25
   TabNumber: 6
-  TemperamentTabNumber: 2
+  TemperamentTabNumber: 1
   DetectionTagsTabNumber: 0
-  AnimationTabNumber: 2
+  AnimationTabNumber: 1
   SoundTabNumber: 0
   MovementTabNumber: 1
   WeaponTypeTabNumber: 0
@@ -3376,7 +3378,7 @@ MonoBehaviour:
   AgentAcceleration: 75
   MaxXAngle: 15
   MaxZAngle: 5
-  HealthPercentageToFlee: 10
+  HealthPercentageToFlee: 20
   Idle1AnimationSpeed: 0.75
   Idle2AnimationSpeed: 0.75
   Idle3AnimationSpeed: 0.75
@@ -3408,8 +3410,8 @@ MonoBehaviour:
   RangedRunAttack3AnimationSpeed: 1
   TurnLeftAnimationSpeed: 1
   TurnRightAnimationSpeed: 1
-  CombatTurnLeftAnimationSpeed: 1
-  CombatTurnRightAnimationSpeed: 1
+  CombatTurnLeftAnimationSpeed: 2
+  CombatTurnRightAnimationSpeed: 2
   RangedCombatTurnLeftAnimationSpeed: 1
   RangedCombatTurnRightAnimationSpeed: 1
   Death1AnimationSpeed: 1
@@ -3438,8 +3440,8 @@ MonoBehaviour:
   RunAnimationSpeed: 1
   NonCombatWalkAnimationSpeed: 1
   NonCombatRunAnimationSpeed: 1
-  CombatWalkAnimationSpeed: 1
-  CombatRunAnimationSpeed: 1
+  CombatWalkAnimationSpeed: 2
+  CombatRunAnimationSpeed: 2
   RangedCombatWalkAnimationSpeed: 1
   RangedCombatRunAnimationSpeed: 1
   Hit1AnimationSpeed: 1
@@ -3479,7 +3481,7 @@ MonoBehaviour:
   CombatStateRef: 0
   CombatTypeRef: 0
   RefillHealthType: 2
-  WanderTypeRef: 0
+  WanderTypeRef: 2
   WaypointTypeRef: 0
   AlignmentQualityRef: 1
   ObstructionDetectionQualityRef: 1
@@ -3777,8 +3779,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _interpolationDataSource: 0
-  _hp: 50
-  _maxHp: 50
+  _hp: 100
+  _maxHp: 100
   _defense: 0
   _isDead: 0
   poweredByAI: 1
@@ -3794,7 +3796,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb00652c19022ff4d8da027b4115d0fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  deathSound: {fileID: 8300000, guid: 01dc8b9985634654b84aa93bd1413eaf, type: 3}
+  deathSound: {fileID: 8300000, guid: 1a163059f39fa4f01a2e8c7643264d7c, type: 3}
+--- !u!114 &5361501483444380126
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9058552373720259277}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d2ee61308d5cf4031891008f12326ec6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  detectionSound: {fileID: 8300000, guid: e67df34f07da95b408072377275df18e, type: 3}
+  disableEmbienceMusic: 1
 --- !u!1 &9111371585775729046
 GameObject:
   m_ObjectHideFlags: 0

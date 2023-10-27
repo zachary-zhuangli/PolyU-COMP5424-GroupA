@@ -1,8 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Fusion;
 
-public class WeaponBaseAttack : MonoBehaviour
+public class WeaponBaseAttack : NetworkBehaviour
 {
 
     /// <summary>
@@ -13,7 +14,7 @@ public class WeaponBaseAttack : MonoBehaviour
     /// <summary>
     /// Used to determine velocity of this collider
     /// </summary>
-    public Rigidbody ColliderRigidbody;
+    // public Rigidbody ColliderRigidbody;
 
     /// <summary>
     /// Minimum Amount of force necessary to do damage. Expressed as impulse.magnitude
@@ -25,14 +26,18 @@ public class WeaponBaseAttack : MonoBehaviour
 
     private void Start()
     {
-        if (ColliderRigidbody == null)
-        {
-            ColliderRigidbody = GetComponent<Rigidbody>();
-        }
+        // if (ColliderRigidbody == null)
+        // {
+        //     ColliderRigidbody = GetComponent<Rigidbody>();
+        // }
     }
 
     private void OnCollisionEnter(Collision collision)
     {
+        // 非本地玩家不做伤害的碰撞检测，伤害统一由对应本地玩家发起
+        if (!Object.HasStateAuthority) {
+            return;
+        }
 
         if (!this.isActiveAndEnabled || !collision.gameObject.CompareTag("Respawn"))
         {
@@ -44,6 +49,10 @@ public class WeaponBaseAttack : MonoBehaviour
 
     private void OnTriggerEnter(Collider collider)
     {
+        // 非本地玩家不做伤害的碰撞检测，伤害统一由对应本地玩家发起
+        if (!Object.HasStateAuthority) {
+            return;
+        }
 
         if (!this.isActiveAndEnabled || !collider.gameObject.CompareTag("Respawn"))
         {

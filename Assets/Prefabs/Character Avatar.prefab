@@ -2939,6 +2939,7 @@ GameObject:
   - component: {fileID: 7497893426506363827}
   - component: {fileID: 7497893426506363826}
   - component: {fileID: 3994076265928102473}
+  - component: {fileID: -1252058093657370870}
   m_Layer: 0
   m_Name: Character Avatar
   m_TagString: Player
@@ -3375,6 +3376,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _interpolationDataSource: 0
+  _isFeetPlant: 1
+--- !u!114 &-1252058093657370870
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7263382099936726721}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fda192d89ba3a4b32a33b55129dc0e7a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  offset: 1.5
 --- !u!1 &7304039556275766945
 GameObject:
   m_ObjectHideFlags: 0

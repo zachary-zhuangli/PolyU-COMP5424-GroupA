@@ -1416,6 +1416,7 @@ GameObject:
   - component: {fileID: -1784573628932235136}
   - component: {fileID: 8224730082774469079}
   - component: {fileID: 4812201506485296391}
+  - component: {fileID: 8583459456210265835}
   m_Layer: 0
   m_Name: MonsterShark
   m_TagString: Respawn
@@ -1464,6 +1465,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!65 &6610339102578074214
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1487,7 +1489,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 01dc8b9985634654b84aa93bd1413eaf, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 94574c805e59c064ab2fe0a6b7207f6d, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -1612,8 +1614,23 @@ MonoBehaviour:
   MeleeAttackPickType: 1
   MeleeAttacks:
   - AttackAnimaition: 0
-    MinDamage: 1
-    MaxDamage: 5
+    MinDamage: 20
+    MaxDamage: 50
+    AttackOdds: 1
+    AttackImpactEffect: {fileID: 0}
+  - AttackAnimaition: 1
+    MinDamage: 20
+    MaxDamage: 50
+    AttackOdds: 1
+    AttackImpactEffect: {fileID: 0}
+  - AttackAnimaition: 2
+    MinDamage: 20
+    MaxDamage: 50
+    AttackOdds: 1
+    AttackImpactEffect: {fileID: 0}
+  - AttackAnimaition: 3
+    MinDamage: 50
+    MaxDamage: 100
     AttackOdds: 1
     AttackImpactEffect: {fileID: 0}
   MeleeAttacksListIndex: 0
@@ -1748,7 +1765,7 @@ MonoBehaviour:
   TotalCombatHitAnimations: 1
   TotalRangedCombatHitAnimations: 1
   TotalEmoteAnimations: 1
-  TotalAttackAnimations: 1
+  TotalAttackAnimations: 4
   TotalRangedAttackAnimations: 1
   TotalRunAttackAnimations: 1
   TotalRangedRunAttackAnimations: 1
@@ -1893,6 +1910,12 @@ MonoBehaviour:
     AnimationClip: {fileID: 7400000, guid: 04592e537df354bbcbb381590c01743a, type: 2}
   AttackAnimationList:
   - AnimationSpeed: 1
+    AnimationClip: {fileID: 7400000, guid: 4695b14231b914b6aaf2a7341c2b0328, type: 2}
+  - AnimationSpeed: 1
+    AnimationClip: {fileID: 7400000, guid: ba2339e97629048c2b2427cc4374f9d4, type: 2}
+  - AnimationSpeed: 1
+    AnimationClip: {fileID: 7400000, guid: 06581bcb1e9c2459aa731b0be00ad8d1, type: 2}
+  - AnimationSpeed: 1
     AnimationClip: {fileID: 7400000, guid: 2dd71a52d042e4d76a3f5381afaca0fe, type: 2}
   RunAttackAnimationList:
   - AnimationSpeed: 0
@@ -1910,11 +1933,11 @@ MonoBehaviour:
   RangedCombatHitAnimationList: []
   RangedRunAttackAnimationList: []
   RangedDeathAnimationList: []
-  Attack1Animation: {fileID: 7400000, guid: 2dd71a52d042e4d76a3f5381afaca0fe, type: 2}
-  Attack2Animation: {fileID: 0}
-  Attack3Animation: {fileID: 0}
-  Attack4Animation: {fileID: 0}
-  Attack5Animation: {fileID: 0}
+  Attack1Animation: {fileID: 7400000, guid: 4695b14231b914b6aaf2a7341c2b0328, type: 2}
+  Attack2Animation: {fileID: 7400000, guid: ba2339e97629048c2b2427cc4374f9d4, type: 2}
+  Attack3Animation: {fileID: 7400000, guid: 06581bcb1e9c2459aa731b0be00ad8d1, type: 2}
+  Attack4Animation: {fileID: 7400000, guid: 2dd71a52d042e4d76a3f5381afaca0fe, type: 2}
+  Attack5Animation: {fileID: 7400000, guid: 2dd71a52d042e4d76a3f5381afaca0fe, type: 2}
   Attack6Animation: {fileID: 0}
   RunAttack1Animation: {fileID: 0}
   RunAttack2Animation: {fileID: 0}
@@ -2047,14 +2070,14 @@ MonoBehaviour:
   ObstructionDetectionUpdateTimer: 0
   CurrentHealth: 0
   StartingHealth: 15
-  DetectionRadius: 18
+  DetectionRadius: 15
   CurrentDamageAmount: 5
   DamageAmountRun: 5
   WanderRadius: 25
-  TabNumber: 3
+  TabNumber: 1
   TemperamentTabNumber: 2
   DetectionTagsTabNumber: 0
-  AnimationTabNumber: 0
+  AnimationTabNumber: 2
   SoundTabNumber: 0
   MovementTabNumber: 0
   WeaponTypeTabNumber: 0
@@ -2063,7 +2086,7 @@ MonoBehaviour:
   AttackAnimationNumber: 1
   RunAttackAnimationNumber: 1
   IdleAnimationNumber: 1
-  CombatTabNumber: 1
+  CombatTabNumber: 0
   FactionsAndTagTabNumber: 0
   EventTabNumber: 0
   MinimumWaitTime: 3
@@ -2085,14 +2108,14 @@ MonoBehaviour:
   ExpandedFieldOfViewAngle: 300
   fieldOfViewAngle: 180
   fieldOfViewAngleRef: 0
-  MaxChaseDistance: 30
+  MaxChaseDistance: 50
   AngleNeededToTurn: 10
   AngleNeededToTurnRunning: 30
   TooCloseDistance: 1
-  MeleeTooCloseDistance: 0.01
+  MeleeTooCloseDistance: 0.001
   RangedTooCloseDistance: 5
   AttackDistance: 2.5
-  MeleeAttackDistance: 3
+  MeleeAttackDistance: 1
   RangedAttackDistance: 25
   RunAttackDistance: 3
   CautiousSeconds: 8
@@ -2209,14 +2232,14 @@ MonoBehaviour:
   BehaviorRef: 3
   DetectionTypeRef: 0
   MaxChaseDistanceTypeRef: 0
-  ConfidenceRef: 1
+  ConfidenceRef: 2
   OptimizedStateRef: 1
   CurrentDetectionRef: 1
   TargetTypeRef: 0
   CombatStateRef: 0
   CombatTypeRef: 0
   RefillHealthType: 2
-  WanderTypeRef: 0
+  WanderTypeRef: 2
   WaypointTypeRef: 0
   AlignmentQualityRef: 1
   ObstructionDetectionQualityRef: 1
@@ -2612,8 +2635,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _interpolationDataSource: 0
-  _hp: 100
-  _maxHp: 100
+  _hp: 200
+  _maxHp: 200
   _defense: 0
   _isDead: 0
   poweredByAI: 1
@@ -2629,7 +2652,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb00652c19022ff4d8da027b4115d0fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  deathSound: {fileID: 8300000, guid: 01dc8b9985634654b84aa93bd1413eaf, type: 3}
+  deathSound: {fileID: 8300000, guid: 94574c805e59c064ab2fe0a6b7207f6d, type: 3}
+--- !u!114 &8583459456210265835
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6304421234382775686}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d2ee61308d5cf4031891008f12326ec6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  detectionSound: {fileID: 8300000, guid: 99ecec1f5e5b9154f86a86947922f473, type: 3}
+  disableEmbienceMusic: 1
 --- !u!1 &6459153760852957841
 GameObject:
   m_ObjectHideFlags: 0

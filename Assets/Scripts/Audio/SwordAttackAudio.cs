@@ -1,8 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Fusion;
 
-public class SwordAttackAudio : MonoBehaviour
+public class SwordAttackAudio : NetworkBehaviour
 {
 	public AudioSource attackAudioSource; // 拖动你的AudioSource组件到这里
 	public AudioClip shieldClip;          // 剑与盾碰撞的声音
@@ -40,5 +41,9 @@ public class SwordAttackAudio : MonoBehaviour
 			attackAudioSource.clip = monsterClip;
 			attackAudioSource.Play();
 		}
+
+		// if (!Object.HasStateAuthority) {
+        //     // TODO：其它玩家发出的武器攻击声音，可以减小音量
+        // }
 	}
 }

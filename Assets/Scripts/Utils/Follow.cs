@@ -9,7 +9,7 @@ public class Follow : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        rotate = this.transform.GetChild(0).localEulerAngles;
+        // rotate = this.transform.GetChild(0).localEulerAngles;
     }
 
     // Update is called once per frame
@@ -17,5 +17,5 @@ public class Follow : MonoBehaviour
     {
         this.transform.position = target.position;
         this.transform.rotation = target.rotation;
-}
+    }
 }

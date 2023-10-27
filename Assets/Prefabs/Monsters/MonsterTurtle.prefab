@@ -1204,6 +1204,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!65 &4050198376570236602
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1524,7 +1525,7 @@ MonoBehaviour:
   MovingTurnSpeedCombat: 2.5
   CurrentMovingTurnSpeed: 2.5
   BackupTurningSpeed: 100
-  MaxSlopeLimit: 30
+  MaxSlopeLimit: 55
   Acceleration: 1
   Deceleration: 0.5
   TurnAngle: 30
@@ -1597,7 +1598,7 @@ MonoBehaviour:
   IdleSoundsSecondsMax: 10
   IdleSoundsTimer: 0
   CurrentAttacks: 0
-  ExpandedChaseDistance: 80
+  ExpandedChaseDistance: 20
   StartingChaseDistance: 0
   ExpandedDetectionRadius: 40
   StartingDetectionRadius: 0
@@ -1787,11 +1788,11 @@ MonoBehaviour:
   ObstructionDetectionUpdateTimer: 0
   CurrentHealth: 0
   StartingHealth: 15
-  DetectionRadius: 18
+  DetectionRadius: 20
   CurrentDamageAmount: 5
   DamageAmountRun: 5
-  WanderRadius: 25
-  TabNumber: 6
+  WanderRadius: 5
+  TabNumber: 2
   TemperamentTabNumber: 2
   DetectionTagsTabNumber: 0
   AnimationTabNumber: 0
@@ -1949,14 +1950,14 @@ MonoBehaviour:
   BehaviorRef: 3
   DetectionTypeRef: 0
   MaxChaseDistanceTypeRef: 0
-  ConfidenceRef: 1
+  ConfidenceRef: 2
   OptimizedStateRef: 1
   CurrentDetectionRef: 1
   TargetTypeRef: 0
   CombatStateRef: 0
   CombatTypeRef: 0
   RefillHealthType: 2
-  WanderTypeRef: 0
+  WanderTypeRef: 2
   WaypointTypeRef: 0
   AlignmentQualityRef: 1
   ObstructionDetectionQualityRef: 1
@@ -2352,8 +2353,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _interpolationDataSource: 0
-  _hp: 20
-  _maxHp: 20
+  _hp: 30
+  _maxHp: 30
   _defense: 0
   _isDead: 0
   poweredByAI: 1

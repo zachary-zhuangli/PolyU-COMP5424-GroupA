@@ -2,11 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.XR;
+using Fusion;
 
-public class SwordVibration : MonoBehaviour
+public class SwordVibration : NetworkBehaviour
 {
 	void OnCollisionEnter(Collision collision)
 	{
+		if (!Object.HasStateAuthority) {
+            return;
+        }
+
 		// 检查碰撞的对象是否是带有"Respawn"标签的对象
 		if (collision.gameObject.CompareTag("Respawn"))
 		{
@@ -17,6 +22,10 @@ public class SwordVibration : MonoBehaviour
 
 	void OnTriggerEnter(Collider collider)
 	{
+		if (!Object.HasStateAuthority) {
+            return;
+        }
+
 		if (collider.gameObject.CompareTag("Respawn"))
 		{
 			RightHandHapticImpulse();
