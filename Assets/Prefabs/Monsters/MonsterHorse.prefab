@@ -2598,8 +2598,8 @@ Transform:
   m_GameObject: {fileID: 9058552373720259277}
   m_LocalRotation: {x: -0, y: -0.97371966, z: -0, w: 0.22775014}
   m_LocalPosition: {x: -77.44, y: 120.71, z: -26.305}
-  m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0.12, y: 0.12, z: 0.12}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 1334274999390879701}
   - {fileID: 3241742881690511047}
@@ -3779,8 +3779,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _interpolationDataSource: 0
-  _hp: 50
-  _maxHp: 50
+  _hp: 100
+  _maxHp: 100
   _defense: 0
   _isDead: 0
   poweredByAI: 1
@@ -3796,7 +3796,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb00652c19022ff4d8da027b4115d0fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  deathSound: {fileID: 8300000, guid: 01dc8b9985634654b84aa93bd1413eaf, type: 3}
+  deathSound: {fileID: 8300000, guid: 1a163059f39fa4f01a2e8c7643264d7c, type: 3}
 --- !u!114 &5361501483444380126
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3810,6 +3810,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   detectionSound: {fileID: 8300000, guid: e67df34f07da95b408072377275df18e, type: 3}
+  disableEmbienceMusic: 1
 --- !u!1 &9111371585775729046
 GameObject:
   m_ObjectHideFlags: 0
