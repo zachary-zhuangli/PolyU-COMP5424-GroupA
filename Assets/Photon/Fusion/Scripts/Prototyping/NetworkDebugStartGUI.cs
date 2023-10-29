@@ -96,8 +96,8 @@ public class NetworkDebugStartGUI : Fusion.Behaviour {
       return;
     }
 
-    // LZ
-    nds.StartSharedClient();
+    // Change by custom, to SKIP the UI and start the game directly.
+    // nds.StartSharedClient();
 
     if (EnableHotkeys) {
       if (Input.GetKeyDown(KeyCode.I)) {
