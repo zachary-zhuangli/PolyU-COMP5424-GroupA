@@ -96,6 +96,9 @@ public class NetworkDebugStartGUI : Fusion.Behaviour {
       return;
     }
 
+    // LZ
+    nds.StartSharedClient();
+
     if (EnableHotkeys) {
       if (Input.GetKeyDown(KeyCode.I)) {
         _networkDebugStart.StartSinglePlayer();
